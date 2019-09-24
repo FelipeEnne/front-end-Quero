@@ -10,7 +10,7 @@
 
 * Criando o header;
 * Criando o nav;
-* Criando o main;
+* Criando o main.
 
 
 ## 24/09/2019
@@ -18,3 +18,9 @@
 * Finalizando o main;
 * Criando o footer;
 * Finalizando o html e css da primeira pagina.
+
+#### Criando o Overlay 
+
+* Criando adicionar bolsa;
+* Seleção de cidades e cursos;
+* Criando o checkbox e o range.

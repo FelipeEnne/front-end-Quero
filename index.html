@@ -9,7 +9,73 @@
 	
 
 </head>
-<body>
+<body Onload="selectCity(); selectCourse();">
+
+	<div id="overlay">
+		<div class="modal">
+			<img Onclick="offOverlay()" class="overlay-icon" src="assets/img/exit.png" alt="exit" title="exit">
+			<div class="modal-content">
+				<div class="modal-menu">
+				<form>
+
+				<div>
+					<div class="modal-title text-color-default">Adicionar bolsa</div>
+					<div class="modal-text text-color-default">Filtre e adicione as bolsas de seu enteresse.</div>
+				</div>
+
+
+				<div class="modal-input1">
+					<div>
+					<div class="modal-text-input text-color-default">SELECIONE SUA CIDADE</div>
+					<select id="select-city" class="modal-input-first modal-cidade">
+						<option value="São José dos Campos">São José dos Campos</option>
+					</select>
+					</div>
+
+					<div>
+					<div class="modal-text-input text-color-default">SELECIONE O CURSO DE SUA PREFERÊNCIA</div>
+					<select id="select-course" class="modal-input-last modal-curso">
+						<option></option>
+					</select>
+					</div>
+				</div>
+
+
+				<div class="modal-input2">
+					<div class="modal-input2-fist">
+					<div class="modal-text-input text-color-default">COMO VOCÊ QUER ESTUDAR?
+					</div>
+					<div class="modal-input-cheackbox">
+					<label class="container-checkbox checkbox-first">Presencial
+					  <input type="checkbox" checked="checked">
+					  <span class="checkmark-checkbox"></span>
+					</label>
+
+					<label class="container-checkbox">A distância
+					  <input type="checkbox" checked="checked">
+					  <span class="checkmark-checkbox"></span>
+					</label>
+					</div>
+					</div>
+
+					<div>
+					<div class="modal-text-input text-color-default">ATÉ QUANTO PODE PAGAR?</div>
+
+					<div class="slidecontainer">
+					<p class="range-output">R$<span id="demo"></span></p>
+					  <input type="range" min="0" max="10000" value="10000" class="slider" id="myRange">
+					  
+					</div>
+
+
+					</div>
+				</div>
+				
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<header class="header-layout">
 		<div class="container">
@@ -113,7 +179,7 @@
 			<div class="menu">
 			<div class="add-bolsa">
 				<div class="plus-img">
-					<a href="#">
+					<a Onclick="onOverlay()">
 					<img class="plus-icon" src="assets/img/plus.png" alt="plus" title="plus">
 					</a>
 				</div>
@@ -180,7 +246,6 @@
 			
 		</div>
 		</div>
-
 	</footer>
 
 	<script type="text/javascript"  src="assets/js/script.js"></script>
