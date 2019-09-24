@@ -4,7 +4,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background-color: white;
+	background-color: #f8f8f8;
     color: #18ACC4;
 }
 
@@ -13,15 +13,18 @@ body{
 header{
 	display: flex;
 	justify-content:center;
-	height: 70px;
+    background-color: white;
+	height: 65px;
 }
 
-.header-layout{
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.09);
+header .header-layout{
+    border-bottom: solid 1px #ebebeb;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.09);  
 }
+
 .container{
 	display: flex;
-	width: 990px;
+	max-width: 1040px;
 	align-items: center;
 }
 .header-info a{
@@ -30,7 +33,7 @@ header{
 .header-icon {
     float: left;
     margin-right: 8px;
-    margin-left: 8px;
+    margin-left: -34px;
     width: 22px;
     height: 22px;
 }
@@ -40,7 +43,7 @@ header{
     font-weight: bold;
 }
 .header-info .header-text {
-    width: 150px;
+    width: 120px;
     margin-top: 3px;
 }
 .header-column{
@@ -50,7 +53,8 @@ header{
 .header-division{
 	align-self: stretch;
 	border: 1px solid #ebebeb;
-	margin: 16px 8px;
+	margin: 13px 8px;
+    margin-right: 10px;
 }
 
 
@@ -60,6 +64,7 @@ header{
 .header-contact .header-icon{
      margin-top: 22px;
      margin-bottom: 22px;
+     margin-left: 10px;
 }
 .header-text-smaller {
     color: #007a8d;
@@ -75,7 +80,7 @@ header{
 .header-logo-img {
     width: 110px;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 105px;
 }
 .header-info-person{
 	margin-left: 230px;
@@ -94,15 +99,59 @@ header{
 }
 
 
-
+nav{
+    display: flex;
+}
 .nav-menu{
 	height: 35px;
 	background-color: #18ACC4;
 	
 }
-.menu {
+.menu-bigwidth {
     width: 100%;
     max-width: 1030px;
+    margin: auto;
+}
+.menu-bigwidth ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu-bigwidth li {
+    float: left;
+    line-height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.menu-text {
+    font-size: 13px;
+}
+.menu-text-conta{
+    font-size: 15px;
+}
+.bold{
+    font-weight: bold;
+}
+.bold-less{
+    font-weight: 500;
+}
+.menu-bigwidth .active{
+    background-color: #007A8D;
+}
+.menu-decoration{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+.min-nav-menu{
+    margin-top: 25px;
+}
+.menu{
+    width: 100%;
+    max-width: 990px;
     margin: auto;
 }
 .menu ul {
@@ -112,25 +161,117 @@ header{
 }
 .menu li {
     float: left;
-    line-height: 35px;
-    padding-left: 20px;
-    padding-right: 20px;
 }
-.menu-text {
-    font-size: 15px;
-
+.min-menu-text{
+    font-size: 12px;
+    font-weight: bolder;
+}
+.min-menu-decoration{
+    text-decoration: none;
+    color: #007a8d;
+}
+.min-menu-li{
+    padding-left: 10px;
+    padding-right: 10px;
+    color: gray;
+    font-size: 12px;
 }
 
-.bold{
+.menu .min-active .min-menu-decoration{
+    font-weight: normal;
+    color: black;
+}
+
+
+
+
+.text-big {
+    margin-top: 40px;
+    color: #1F2D30;
+    font-size: 35px;
     font-weight: bold;
 }
-.bold-less{
-    font-weight: 500;
+.text-small {
+    margin-top: 18px;
+    color: #1F2D30;
+    font-size: 15px;
+    margin-bottom: 35px;
 }
-.menu .active{
+
+
+
+
+.float-right{
+    float: right;
+    margin-bottom: 35px;
+}
+.semestres-text{
+    padding: 4px;
+    text-align: center;
+}
+
+.semestres-last{
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.active-semestres-last{
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
     background-color: #007A8D;
 }
-.menu-decoration{
-    text-decoration: none;
-    color: white;
+.semestres-middle{
+    border-style: solid;
+    border-width: 1px;
 }
+.active-semestres-middle{
+    border-style: solid;
+    border-width: 1px;
+    background-color: #007A8D;
+}
+.active-semestres-first{
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: #007A8D;
+}
+.normal-semestres-first{
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.semestres-decoration{
+    text-decoration: none;
+    color:#007A8D;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.active-semestres-first .semestres-decoration {
+    color:white;
+    padding: 5px;
+}
+.active-semestres-middle .semestres-decoration {
+    color:white;
+    padding: 5px;
+}
+.active-semestres-last .semestres-decoration {
+    color:white;
+    padding: 5px;
+}
+
+
+
+.add-bolsa{
+    height: 375px;
+    width: 225px;
+    box-shadow: 1px 2px 8px 0px #80808026;
+    margin-bottom: 35px;
+    background-color: white;
+}
+
