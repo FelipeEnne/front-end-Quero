@@ -15,5 +15,6 @@
 
 ## 24/09/2019
 
-* Finalizando o main
-* Criando o footer
+* Finalizando o main;
+* Criando o footer;
+* Finalizando o html e css da primeira pagina.
