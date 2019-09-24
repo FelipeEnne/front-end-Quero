@@ -201,6 +201,7 @@ nav{
 
 
 
+
 .float-right{
     float: right;
     margin-bottom: 35px;
@@ -267,11 +268,65 @@ nav{
 
 
 
+
 .add-bolsa{
     height: 375px;
     width: 225px;
     box-shadow: 1px 2px 8px 0px #80808026;
     margin-bottom: 35px;
     background-color: white;
+    margin-bottom: 220px;
+}
+.plus-img{
+    padding-top: 90px;
+    padding-left: 92.5px;
+    margin-bottom: 30px;
+}
+.plus-icon{
+    width: 40px;
+    height: 40px;
+}
+.plus-title {
+    color: #1F2D30;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.plus-text {
+    margin-top: 4px;
+    color: #1F2D30;
+    font-size: 10px;
+    text-align: center;
 }
 
+
+
+
+footer{
+    height: 170px;
+    background-color: #18ACC4;
+}
+.first-footer{
+    height: 85px;
+    background-color: #007A8D;
+}
+.last-footer{
+    
+}
+.whats-footer{
+    
+}
+.menu-footer{
+    display: flex;
+}
+.footer-icon{
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+}
+.footer-item{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}

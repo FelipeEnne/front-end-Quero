@@ -11,3 +11,9 @@
 * Criando o header;
 * Criando o nav;
 * Criando o main;
+
+
+## 24/09/2019
+
+* Finalizando o main
+* Criando o footer
