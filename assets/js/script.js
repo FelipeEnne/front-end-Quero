@@ -23,12 +23,14 @@ request.send();
 
 request.onload = function() {
   myObj  = request.response;
-  
+  selectCity();
+  selectCourse();
+  filterAll();
+  resultsOverlay();
 }
 
 
 //overlay primeiro select
-console.log(myObj);
 var allCitys = ["São José dos Campos"];
 function pushCitys(){
 
@@ -49,8 +51,6 @@ function selectCity() {
 	}
 	//console.log("teste")
 }
-
-
 
 //overlay segundo select
 var allCourses = [];
@@ -76,11 +76,80 @@ function selectCourse() {
 
 
 
-
+//ranger
 var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
+var output = document.getElementById("price");
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+}
+output.innerHTML = formatNumber(slider.value);
 slider.oninput = function() {
-  output.innerHTML = this.value;
+	output.innerHTML = formatNumber(this.value);
+}
+
+
+
+//filters
+function sortUniversityName(myObj){
+	myObj.sort(function (a, b) {
+	  return a.university.name < b.university.name ? -1 :
+		(a.university.name > b.university.name ? 1 : 0);
+  });
+}
+
+var citySelect, courseSelect, presencialSelect, adistaciaSelect, precoSelect;
+
+function filterCidade(){
+	var citySelect = document.getElementById("select-city").value;
+	//console.log(citySelect);
+}
+function filterCourse(){
+	var courseSelect = document.getElementById("select-course").value;
+	//console.log(courseSelect);
+}
+function filterHow(){
+	var presencialSelect = document.getElementById("presencial").value;
+	var adistaciaSelect = document.getElementById("adistancia").value;
+	//console.log(presencialSelect);
+	//console.log(adistaciaSelect);
+}
+function filterPricefirst(){
+	var precoSelect = slider.value;
+	//console.log(precoSelect);
+}
+function filterAll(){
+	sortUniversityName(myObj);
+  	filterCidade();
+  	filterCourse();
+  	filterHow();
+  	filterPricefirst();
+}
+
+function addCheckbox(id){
+	let div = document.createElement("div");
+	div.classList.add("modal-reults-margin");
+
+	let label = document.createElement("label");
+	label.classList.add("container-checkbox");
+	label.classList.add("modal-reults-margin");
+
+	let input = document.createElement("input");
+	input.setAttribute("type", "checkbox");
+
+
+	let span = document.createElement("span");
+	span.classList.add("checkmark-checkbox");
+
+	label.appendChild(input);
+	label.appendChild(span);
+	div.appendChild(label);
+
+	let element = document.getElementById(id);
+	element.appendChild(div);
+}
+
+function resultsOverlay(){
+
+	addCheckbox("second-result");
+	
 }

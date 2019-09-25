@@ -377,7 +377,7 @@ footer{
     position: absolute; 
     display: block; 
     width: 100%; 
-    height: 322%; 
+    height: 1120px; 
     top: 0;
     left: 0;
     right: 0;
@@ -385,13 +385,13 @@ footer{
     background-color: rgba(31, 45, 48, 0.88);
     z-index: 10; 
 }
-.modal {
+.modal-overlay  {
     position: absolute; 
     left: 25%;
     margin-top: 130px;
     z-index: 11;
 }
-.modal img{
+.modal-overlay .overlay-icon{
     margin-left: 610px;
     width: 30px;
     height: 30px;
@@ -586,5 +586,80 @@ footer{
     cursor: pointer;
     border-style:solid;
     border-width:2px;
-    border-color: #18ACC4;
+
+}
+
+
+
+.modal-indice{
+    font-size: 13px;
+    color: #1F2D30;
+    font-weight: bolder;
+    display: flex;
+    margin-top: 40px;
+}
+.modal-resultado{
+    margin-right: 265px;
+}
+
+.modal-ordenar{
+   display: flex;
+}
+.modal-ordenar-modo{
+    display: flex;
+    text-decoration: none;
+    margin-left: 6px;
+    color: #007A8D;
+    width: 140px;
+}
+#modal-icon{
+    margin: 0px;
+    margin-left: 3px;
+    width: 13px;
+    margin-top: 3px;
+    height: 8px;
+    opacity: 1;
+}
+.hr-modal{
+    opacity: 0.5;
+    width: 550px;
+    margin-left: 2px;
+}
+.modal-results{
+    height: 48px;
+    display: flex;
+}
+.modal-reults-margin{
+    margin-top: 7px;
+}
+.modal-img{
+    height: 60px;
+    margin-top: -5px;
+    margin-left: 27px;
+}
+.modal-title-result{
+    font-size: 15px;
+    color: #007A8D;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+.modal-text-result{
+    font-size: 11px;
+    color: #1F2D30;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+.modal-bolsa{
+    margin-left: 208px;
+    text-align: center;
+    justify-content: center;
+}
+.modal-text-bolsa{
+    font-size: 15px;
+    color: #1F2D30;
+    margin-top: 6px;
+}
+.modal-bold-bolsa{
+    color: #0FA866;
+    font-size: 15px;
 }

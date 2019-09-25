@@ -9,10 +9,10 @@
 	
 
 </head>
-<body Onload="selectCity(); selectCourse();">
+<body>
 
 	<div id="overlay">
-		<div class="modal">
+		<div class="modal-overlay">
 			<img Onclick="offOverlay()" class="overlay-icon" src="assets/img/exit.png" alt="exit" title="exit">
 			<div class="modal-content">
 				<div class="modal-menu">
@@ -47,12 +47,12 @@
 					</div>
 					<div class="modal-input-cheackbox">
 					<label class="container-checkbox checkbox-first">Presencial
-					  <input type="checkbox" checked="checked">
+					  <input id="presencial" type="checkbox" checked="checked">
 					  <span class="checkmark-checkbox"></span>
 					</label>
 
 					<label class="container-checkbox">A distância
-					  <input type="checkbox" checked="checked">
+					  <input id="adistancia" type="checkbox" checked="checked">
 					  <span class="checkmark-checkbox"></span>
 					</label>
 					</div>
@@ -60,17 +60,55 @@
 
 					<div>
 					<div class="modal-text-input text-color-default">ATÉ QUANTO PODE PAGAR?</div>
-
 					<div class="slidecontainer">
-					<p class="range-output">R$<span id="demo"></span></p>
+					<p class="range-output">R$<span id="price"></span></p>
 					  <input type="range" min="0" max="10000" value="10000" class="slider" id="myRange">
-					  
 					</div>
-
-
 					</div>
 				</div>
-				
+
+
+				<div class="modal-indice">
+					<div class="modal-resultado">Resultado:</div>
+					<div class="modal-ordenar">Ordenar por 
+						<div class="modal-ordenar-modo">Nome da Faculdade<a href="#"><img id="modal-icon" src="assets/img/arrow.png" alt="arrow" title="arrow"></a></div>
+					</div>
+				</div>
+
+
+
+				<hr class="hr-modal"/>
+
+
+				<div class="modal-results" id="firt-result">
+				<div class="modal-reults-margin">
+					<label class="container-checkbox modal-reults-margin">
+						  <input type="checkbox">
+						  <span class="checkmark-checkbox"></span>
+					</label>
+				</div>
+				<div>
+					<img class="modal-img" src="assets/img/anhanguera.png" alt="anhanguera" title="anhanguera">
+				</div>
+				<div >
+					<div class="modal-title-result"><strong>Administração</strong></div>
+					<div class="modal-text-result">Bacharelado</div>
+				</div>
+				<div class="modal-bolsa">
+					<div class="modal-text-bolsa">Bolsa de <strong class="modal-bold-bolsa">50%</strong></div>
+					<div><strong class="modal-bold-bolsa">R$ 374/mês</strong></div>
+				</div>		
+				</div>
+
+				<hr class="hr-modal"/>
+
+				<div class="modal-results" id="second-result">
+					
+				</div>
+
+				<hr class="hr-modal"/>
+
+
 				</form>
 				</div>
 			</div>
@@ -129,13 +167,13 @@
 		<div class="menu-bigwidth">
 			<ul>
 				<li class="menu-text-conta bold">
-					<a href="" class="menu-decoration">Minha conta</a>
+					<a href="#" class="menu-decoration">Minha conta</a>
 				</li>
 				<li class="menu-text bold" >
-					<a href="" class="menu-decoration">Pré-matrículas</a>
+					<a href="#" class="menu-decoration">Pré-matrículas</a>
 				</li>
 				<li class="active menu-text bold">
-					<a href="" class="menu-decoration">Bolsas Favoritas</a>
+					<a href="#" class="menu-decoration">Bolsas Favoritas</a>
 				</li>
 			</ul>
 		</div>
@@ -145,11 +183,11 @@
 	<nav class="min-nav-menu">
 		<div class="menu">
 			<ul>
-				<li class="min-menu-text"><a href="" class="min-menu-decoration">Home</a></li>
+				<li class="min-menu-text"><a href="#" class="min-menu-decoration">Home</a></li>
 				<li class="min-menu-li">/</li>
-				<li class="min-menu-text" ><a href="" class="min-menu-decoration">Minha conta</a></li>
+				<li class="min-menu-text" ><a href="#" class="min-menu-decoration">Minha conta</a></li>
 				<li class="min-menu-li">/</li>
-				<li class="min-active min-menu-text"><a href="" class="min-menu-decoration">Bolsas Favoritas</a></li>
+				<li class="min-active min-menu-text"><a href="#" class="min-menu-decoration">Bolsas Favoritas</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -166,9 +204,9 @@
 		<div class="menu">
 		<div class="float-right">
 			<ul>
-				<li class="semestres-text active-semestres-first"><a href="" class="semestres-decoration">Todos os semestres</a></li>
-				<li class="semestres-text semestres-middle"><a href="" class="semestres-decoration">2º semestre de 2019</a></li>
-				<li class="semestres-text semestres-last"><a href="" class="semestres-decoration">1º semestre de 2020</a></li>
+				<li class="semestres-text active-semestres-first"><a href="#" class="semestres-decoration">Todos os semestres</a></li>
+				<li class="semestres-text semestres-middle"><a href="#" class="semestres-decoration">2º semestre de 2019</a></li>
+				<li class="semestres-text semestres-last"><a href="#" class="semestres-decoration">1º semestre de 2020</a></li>
 			</ul>
 		</div>
 		</div>
@@ -249,5 +287,6 @@
 	</footer>
 
 	<script type="text/javascript"  src="assets/js/script.js"></script>
+
 </body>
 </html>

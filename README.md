@@ -19,8 +19,10 @@
 * Criando o footer;
 * Finalizando o html e css da primeira pagina.
 
-#### Criando o Overlay 
+#### Criando o Modal Overlay 
 
 * Criando adicionar bolsa;
 * Seleção de cidades e cursos;
 * Criando o checkbox e o range.
+
+#### Criando outputs dos resultados 
