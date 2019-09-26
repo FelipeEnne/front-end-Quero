@@ -45,6 +45,7 @@
 - Falta o filtro do semestre;
 - Falta o botão Indisponível {enabled: false};
 
+##### Tela do computador finalizada
 
 
 

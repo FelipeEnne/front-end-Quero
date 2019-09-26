@@ -240,7 +240,7 @@ nav{
     border-top-left-radius: 5px;
     background-color: #007A8D;
 }
-.normal-semestres-first{
+.semestres-first{
     border-style: solid;
     border-width: 1px;
     border-bottom-left-radius: 5px;
@@ -855,4 +855,14 @@ footer{
     border-color: #6a6a6aa8;
     width: 95px;
     height: 28px;
+}
+.submit-text-Enabled{
+    margin-top: 6px;
+    color: #1F2D30;
+    font-size: 10px;
+    text-align: center;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 14px;
 }

@@ -372,7 +372,7 @@ function filterResults(){
 	removeChildModal();
 	
 	
-	console.log(resultsIndex);
+	//console.log(resultsIndex);
 	showResultModal();
 
 	enableSubmit();
@@ -628,13 +628,15 @@ function addstartDateHome(id,index){
 	hr.setAttribute("class","submit-hr");
 
 	element.appendChild(hr);
+}
+function addfullPriceHome(id,index){
 
 	let div1 = document.createElement("div");
 	div1.setAttribute("class","submit-text-kind");
 	div1.innerHTML = "Mensalidade com o Quero Bolsa:";
+	let element = document.getElementById(id);
 	element.appendChild(div1);
-}
-function addfullPriceHome(id,index){
+
 	let div = document.createElement("div");
 	div.setAttribute("class","submit-text-fullPrice");
 
@@ -645,9 +647,29 @@ function addfullPriceHome(id,index){
 	div.innerHTML = "R$ "+ formatNumber(fullPrice);
 	
 
-	let element = document.getElementById(id);
+	
 	element.appendChild(div);
 }
+
+function addtextHomeEnabled(id,index){
+
+	let div1 = document.createElement("div");
+	div1.setAttribute("class","submit-text-kind");
+	div1.innerHTML = "Bolsa indisponível.";
+
+	let element = document.getElementById(id);
+
+	element.appendChild(div1);
+
+
+	let div2 = document.createElement("div");
+	div2.setAttribute("class","submit-text-Enabled");
+
+	div2.innerHTML = "Entre em contato com nosso atendimento para saber mais.";
+	
+	element.appendChild(div2);	
+}
+
 function addDiscountPriceHome(id,index){
 	let div = document.createElement("div");
 	div.setAttribute("class","submit-text-discount");
@@ -671,7 +693,6 @@ function addDiscountPriceHome(id,index){
 	element.appendChild(div);
 }
 var idButtonExcluir = 1;
-
 function addSubmitButton(id,index){
 	let div = document.createElement("div");
 	div.setAttribute("class","submit-button");
@@ -694,6 +715,29 @@ function addSubmitButton(id,index){
 	idButtonExcluir++;
 }
 
+function addSubmitButtonEnabled(id,index){
+	let div = document.createElement("div");
+	div.setAttribute("class","submit-button");
+
+	let button1 = document.createElement("button");
+	button1.setAttribute("class","submit-excluir");
+	button1.setAttribute("id","ButtonExcluir");
+	button1.setAttribute("value",idButtonExcluir);
+	button1.setAttribute("Onclick","removeFromHomeButton"+idButtonExcluir+"();");
+	button1.innerHTML = "Excluir";
+	div.appendChild(button1);
+
+	let button2 = document.createElement("button");
+	button2.setAttribute("class","submit-Veroferta");
+	button2.setAttribute("disabled","disabled");;
+	button2.innerHTML = "Indisponível";
+	div.appendChild(button2);
+
+	let element = document.getElementById(id);
+	element.appendChild(div);
+	idButtonExcluir++;
+}
+
 function addHome(id,index){
 	disablebolsaSubmit();
 	addImageHome(id,index);
@@ -702,9 +746,21 @@ function addHome(id,index){
 	addScoreHome(id,index);
 	addKindHome(id,index);
 	addstartDateHome(id,index);
+
+	//console.log(myObj[index]["enabled"]);
+	if(myObj[index]["enabled"] == true){
 	addfullPriceHome(id,index);
 	addDiscountPriceHome(id,index);
 	addSubmitButton(id,index);
+	}
+
+	if(myObj[index]["enabled"] == false){
+	addtextHomeEnabled(id,index);
+	addSubmitButtonEnabled(id,index);
+	}
+	//console.log(index);
+	//console.log(myObj[index]["enrollment_semester"]);
+	//console.log(myObj[index]["course"]["name"]);
 }
 
 function addHomeAll(){
@@ -717,6 +773,7 @@ function addHomeAll(){
 	if(resultsHome[2]){
 	addHome("bolsaSubmit-third",resultsHome[2]);
 	}
+	
 }
 function removeFromHome(){
 
@@ -768,16 +825,131 @@ function removeFromHomeButton3(){
 
 function addresultsHome(){
 
+	//console.log(resultsHome);
 	resultsHome = [];
 	offOverlay();
 	getIndexresultsHome();
 	
 	removeFromHome();
 	
-
+	
 	addHomeAll();
 
 	filterResults();
 	
 	//console.log(resultsHome);
+}
+
+
+
+
+function filterSemesterall(){
+	let semestresAll = document.getElementById("semestresAll");
+	let semestres1 = document.getElementById("semestres1");
+	let semestres2 = document.getElementById("semestres2");
+
+	semestresAll.setAttribute("class","semestres-text active-semestres-first");
+	semestres1.setAttribute("class","semestres-text semestres-middle");
+	semestres2.setAttribute("class","semestres-text semestres-last");
+	
+	//index começa a contar no 1 
+	for (let i = 1; i < resultsHome.length+1; i++){
+		let semester = (myObj[i]["enrollment_semester"]).toString().substr(-1);
+		console.log(semester);
+
+		if(semester == 1 || semester == 2){
+			let div1 = document.getElementById("bolsaSubmit-fist");
+			let div2 = document.getElementById("bolsaSubmit-second");
+			let div3 = document.getElementById("bolsaSubmit-third");
+			if(div1.hasChildNodes() && i == 1){
+				div1.setAttribute("style","display: block;");
+			}
+			if(div1.hasChildNodes() && i == 2){
+				
+				div2.setAttribute("style","display: block;");
+			}
+			if(div1.hasChildNodes() && i == 3){
+				
+				div3.setAttribute("style","display: block;");
+			}
+		}
+
+	}
+}
+
+function filterSemester1(){
+
+	filterSemesterall();
+
+	let semestresAll = document.getElementById("semestresAll");
+	let semestres1 = document.getElementById("semestres1");
+	let semestres2 = document.getElementById("semestres2");
+
+	semestresAll.setAttribute("class","semestres-text semestres-first");
+	semestres1.setAttribute("class","semestres-text active-semestres-middle");
+	semestres2.setAttribute("class","semestres-text semestres-last");
+
+	//index começa a contar no 1 
+	for (let i = 1; i < resultsHome.length+1; i++){
+		let semester = (myObj[i]["enrollment_semester"]).toString().substr(-1);
+		console.log(semester);
+
+		if(semester == 1){
+			let div1 = document.getElementById("bolsaSubmit-fist");
+			let div2 = document.getElementById("bolsaSubmit-second");
+			let div3 = document.getElementById("bolsaSubmit-third");
+			if(div1.hasChildNodes() && i == 1){
+				div1.setAttribute("style","display: none;");
+			}
+			if(div1.hasChildNodes() && i == 2){
+				
+				div2.setAttribute("style","display: none;");
+			}
+			if(div1.hasChildNodes() && i == 3){
+				
+				div3.setAttribute("style","display: none;");
+			}
+		}
+
+	}
+
+
+	//console.log(resultsHome);
+}
+
+function filterSemester2(){
+
+	filterSemesterall();
+
+	let semestresAll = document.getElementById("semestresAll");
+	let semestres1 = document.getElementById("semestres1");
+	let semestres2 = document.getElementById("semestres2");
+
+	semestresAll.setAttribute("class","semestres-text semestres-first");
+	semestres1.setAttribute("class","semestres-text semestres-middle");
+	semestres2.setAttribute("class","semestres-text active-semestres-last");
+
+	//index começa a contar no 1 
+	for (let i = 1; i < resultsHome.length+1; i++){
+		let semester = (myObj[i]["enrollment_semester"]).toString().substr(-1);
+		console.log(semester);
+
+		if(semester == 2){
+			let div1 = document.getElementById("bolsaSubmit-fist");
+			let div2 = document.getElementById("bolsaSubmit-second");
+			let div3 = document.getElementById("bolsaSubmit-third");
+			if(div1.hasChildNodes() && i == 1){
+				div1.setAttribute("style","display: none;");
+			}
+			if(div1.hasChildNodes() && i == 2){
+				
+				div2.setAttribute("style","display: none;");
+			}
+			if(div1.hasChildNodes() && i == 3){
+				
+				div3.setAttribute("style","display: none;");
+			}
+		}
+
+	}
 }
