@@ -27,14 +27,14 @@
 				<div class="modal-input1">
 					<div>
 					<div class="modal-text-input text-color-default">SELECIONE SUA CIDADE</div>
-					<select id="select-city" class="modal-input-first modal-cidade">
+					<select Onchange="filterResults()" id="select-city" class="modal-input-first modal-cidade">
 						<option value="São José dos Campos">São José dos Campos</option>
 					</select>
 					</div>
 
 					<div>
 					<div class="modal-text-input text-color-default">SELECIONE O CURSO DE SUA PREFERÊNCIA</div>
-					<select id="select-course" class="modal-input-last modal-curso">
+					<select Onchange="filterResults()" id="select-course" class="modal-input-last modal-curso">
 						<option></option>
 					</select>
 					</div>
@@ -47,13 +47,13 @@
 					</div>
 					<div class="modal-input-cheackbox">
 					<label class="container-checkbox checkbox-first">Presencial
-					  <input id="presencial" type="checkbox" checked="checked">
-					  <span class="checkmark-checkbox"></span>
+					  <input  Onchange="filterResults()" Onclick="changePresencial()" id="presencial" type="checkbox" checked="checked" >
+					  <span  class="checkmark-checkbox"></span>
 					</label>
 
 					<label class="container-checkbox">A distância
-					  <input id="adistancia" type="checkbox" checked="checked">
-					  <span class="checkmark-checkbox"></span>
+					  <input Onclick="changeaDistacia()" Onchange="filterResults()" id="adistancia" type="checkbox" checked="checked">
+					  <span  class="checkmark-checkbox"></span>
 					</label>
 					</div>
 					</div>
@@ -62,7 +62,7 @@
 					<div class="modal-text-input text-color-default">ATÉ QUANTO PODE PAGAR?</div>
 					<div class="slidecontainer">
 					<p class="range-output">R$<span id="price"></span></p>
-					  <input type="range" min="0" max="10000" value="10000" class="slider" id="myRange">
+					  <input Onchange="filterResults()" type="range" min="0" max="10000" value="10000" class="slider" id="myRange">
 					</div>
 					</div>
 				</div>
@@ -77,43 +77,37 @@
 
 
 
-				<hr class="hr-modal"/>
+				<hr class="hr-modal-first"/>
 
 
-				<div class="modal-results" id="firt-result">
-				<div class="modal-reults-margin">
-					<label class="container-checkbox modal-reults-margin">
-						  <input type="checkbox">
-						  <span class="checkmark-checkbox"></span>
-					</label>
-				</div>
-				<div>
-					<img class="modal-img" src="assets/img/anhanguera.png" alt="anhanguera" title="anhanguera">
-				</div>
-				<div >
-					<div class="modal-title-result"><strong>Administração</strong></div>
-					<div class="modal-text-result">Bacharelado</div>
-				</div>
-				<div class="modal-bolsa">
-					<div class="modal-text-bolsa">Bolsa de <strong class="modal-bold-bolsa">50%</strong></div>
-					<div><strong class="modal-bold-bolsa">R$ 374/mês</strong></div>
-				</div>		
-				</div>
+				<div class="modal-results" id="first-result">
 
-				<hr class="hr-modal"/>
+					
+				</div>
 
 				<div class="modal-results" id="second-result">
 					
 				</div>
 
-				<hr class="hr-modal"/>
+				<div class="modal-results" id="third-result">
+					
+				</div>
+
+				<div class="modal-results" id="fourth-result">
+					
+				</div>
+
+				<div class="modal-results" id="fifth-result">
+					
+				</div>
+				
 
 
 				</form>
 				</div>
 			</div>
 		</div>
-	</div>
+	
 
 	<header class="header-layout">
 		<div class="container">
@@ -286,6 +280,8 @@
 		</div>
 	</footer>
 
+	<!--- div overlay -->
+	</div>
 	<script type="text/javascript"  src="assets/js/script.js"></script>
 
 </body>

@@ -624,24 +624,39 @@ footer{
     opacity: 0.5;
     width: 550px;
     margin-left: 2px;
+    margin-top: 12px;
+}
+.hr-modal-first{
+    opacity: 0.5;
+    width: 550px;
+    margin-left: 2px;
+    margin-top: 12px;
 }
 .modal-results{
     height: 48px;
     display: flex;
+
 }
 .modal-reults-margin{
     margin-top: 7px;
 }
 .modal-img{
-    height: 60px;
+    max-height: 60px;
     margin-top: -5px;
-    margin-left: 27px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 130px;
+}
+.modal-img-width{
+    width: 130px;
 }
 .modal-title-result{
     font-size: 15px;
     color: #007A8D;
     margin-left: 10px;
     margin-top: 6px;
+    font-weight: bold;
 }
 .modal-text-result{
     font-size: 11px;
@@ -650,7 +665,7 @@ footer{
     margin-top: 6px;
 }
 .modal-bolsa{
-    margin-left: 208px;
+    margin-left: 245px;
     text-align: center;
     justify-content: center;
 }

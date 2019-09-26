@@ -26,3 +26,16 @@
 * Criando o checkbox e o range.
 
 #### Criando outputs dos resultados 
+
+
+## 25/09/2019
+
+* Finalizando outputs dos resultados;
+* Testado somente no chrome;
+
+
+
+
+
+
+Obs: Devido a pressa acabou passando batido e eu não utilizei o conceito Mobile First
