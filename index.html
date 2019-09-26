@@ -62,7 +62,7 @@
 					<div class="modal-text-input text-color-default">ATÉ QUANTO PODE PAGAR?</div>
 					<div class="slidecontainer">
 					<p class="range-output">R$<span id="price"></span></p>
-					  <input Onchange="filterResults()" type="range" min="0" max="10000" value="10000" class="slider" id="myRange">
+					  <input Onchange="filterResults()"type="range" min="0" max="10000" value="10000" class="slider" id="myRange">
 					</div>
 					</div>
 				</div>
@@ -105,9 +105,13 @@
 
 				</form>
 				</div>
+				<div>
+					<button Onclick="offOverlay()" class="modal-cancelar">Cancelar</button>
+				</div>
 			</div>
 		</div>
-	
+	<!--- div overlay -->
+	</div>
 
 	<header class="header-layout">
 		<div class="container">
@@ -119,8 +123,6 @@
 				<a href="#" >
 				<div class="header-text">Como funciona</div>
 				</a>
-
-				
 			</div>
 
 			<hr class="header-division">
@@ -152,7 +154,7 @@
 			</div>
 
 
-			</div>
+			
 		</div>
 	</header>
 
@@ -280,8 +282,7 @@
 		</div>
 	</footer>
 
-	<!--- div overlay -->
-	</div>
+	
 	<script type="text/javascript"  src="assets/js/script.js"></script>
 
 </body>

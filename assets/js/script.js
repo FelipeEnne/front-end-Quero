@@ -145,7 +145,6 @@ function filterAll(){
 var resultsIndex = [];
 function  getIndexAfterFilter(){
 
-	console.log(precoSelect);
 	
 	for(let i = 1; i < myObj.length; i++){
 		if(myObj[i]["campus"]["city"] == citySelect && 
@@ -170,14 +169,14 @@ function addCheckbox(id,idinput){
 	let label = document.createElement("label");
 	label.classList.add("container-checkbox");
 	label.classList.add("modal-reults-margin");
+	
 
 	let input = document.createElement("input");
 	input.setAttribute("type", "checkbox");
-	input.setAttribute("id", idinput);
-
 
 	let span = document.createElement("span");
 	span.classList.add("checkmark-checkbox");
+	span.setAttribute("id", idinput);
 
 	label.appendChild(input);
 	label.appendChild(span);
@@ -186,7 +185,6 @@ function addCheckbox(id,idinput){
 	let element = document.getElementById(id);
 	element.appendChild(div);
 }
-
 
 function addLogo(id,index){
 	let div = document.createElement("div");
@@ -231,7 +229,6 @@ function addText(id,index){
 	let element = document.getElementById(id);
 	element.appendChild(div1);
 }
-
 
 function addTextBolsa(id,index){
 
@@ -278,7 +275,6 @@ function addhr(id){
 
 	let element = document.getElementById(id);
 	element.after(hr);
-
 }
 
 function addResultModal(id,index,idinput){
@@ -305,6 +301,7 @@ function showResultModal(){
 	if(resultsIndex[4]){
 		addResultModal("fifth-result",resultsIndex[4],"checkbox5");
 	}
+	
 }
 
 function resultsOverlay(){
@@ -313,9 +310,10 @@ function resultsOverlay(){
 	console.log(resultsIndex);
 	showResultModal();
 
-	//console.log(document.getElementById("second-result").value);
+	addcheckboxSelect();
 	
 }
+
 
 function removeChildModal(){
 
@@ -371,8 +369,6 @@ function removeChildModal(){
   	}
   	counthrID = 1;
 }
-
-
 function filterResults(){
 
 	resultsIndex = [];
@@ -380,7 +376,72 @@ function filterResults(){
 	getIndexAfterFilter();
 
 	removeChildModal();
-	console.log(resultsIndex);
+	//console.log(resultsIndex);
 	showResultModal();
-	
 }
+
+
+
+//submit
+var checkboxSelect = [0,0,0,0,0];
+function checkboxChange1(){
+	
+	if (checkboxSelect[0] == 0) {
+		checkboxSelect[0] = 1;
+	}else{
+		checkboxSelect[0] = 0;
+	}
+	//console.log(checkboxSelect);
+}
+function checkboxChange2(){
+	if (checkboxSelect[1] == 0) {
+		checkboxSelect[1] = 1;
+	}else{
+		checkboxSelect[1] = 0;
+	}	
+}
+function checkboxChange3(){
+	if (checkboxSelect[2] == 0) {
+		checkboxSelect[2] = 1;
+	}else{
+		checkboxSelect[2] = 0;
+	}	
+}
+function checkboxChange4(){
+	if (checkboxSelect[3] == 0) {
+		checkboxSelect[3] = 1;
+	}else{
+		checkboxSelect[3] = 0;
+	}	
+}
+function checkboxChange5(){
+	if (checkboxSelect[4] == 0) {
+		checkboxSelect[4] = 1;
+	}else{
+		checkboxSelect[4] = 0;
+	}	
+}
+
+
+function addcheckboxSelect(){
+	let checkbox1 = document.getElementById("checkbox1");
+	checkbox1.setAttribute("Onclick", "checkboxChange1()");
+	
+	let checkbox2 = document.getElementById("checkbox2");
+	checkbox2.setAttribute("Onclick", "checkboxChange2()");
+
+	let checkbox3 = document.getElementById("checkbox3");
+	checkbox3.setAttribute("Onclick", "checkboxChange3()");
+
+	let checkbox4 = document.getElementById("checkbox4");
+	checkbox4.setAttribute("Onclick", "checkboxChange4()");
+
+	let checkbox5 = document.getElementById("checkbox5");
+	checkbox5.setAttribute("Onclick", "checkboxChange5()");
+}
+
+
+
+
+
+

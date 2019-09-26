@@ -31,11 +31,13 @@
 ## 25/09/2019
 
 * Finalizando outputs dos resultados;
+* Limitando em apenas 5 resultados
 * Testado somente no chrome;
 
+* Criando o submit;
 
 
 
 
 
-Obs: Devido a pressa acabou passando batido e eu não utilizei o conceito Mobile First
+Obs: Devido a minha pressa acabou passando despercebido que eu não utilizei o conceito Mobile First. O que foi um erro, pois teria faciltado o trabalho.
