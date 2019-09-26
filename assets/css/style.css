@@ -375,7 +375,7 @@ footer{
 
 #overlay {
     position: absolute; 
-    display: block; 
+    display: none; 
     width: 100%; 
     height:1120px; 
     top: 0;
@@ -661,7 +661,7 @@ footer{
     font-size: 11px;
     color: #1F2D30;
     margin-left: 10px;
-    margin-top: 6px;
+    margin-top: 3px;
 }
 .modal-bolsa{
     margin-left: 245px;
@@ -680,12 +680,179 @@ footer{
 .modal-cancelar{
     z-index: 15;
     position: absolute;
-    top: 700px;
-    right: 231px;
+    top: 698px;
+    right: 215px;
     background-color: white;
-    color: #18acc4;
-    padding: 14px;
+    color: #007A8D;
     border: solid 1px;
     border-radius: 5px;
     font-weight: bolder;
+    border-color:#18ACC4;
+    width: 95px;
+    height: 40px;
+}
+.modal-submit:disabled{
+    z-index: 15;
+    position: absolute;
+    top: 698px;
+    right: 50px;
+    background-color: #d5d2d2;
+    color: #6a6a6aa8;
+    border: solid 1px;
+    border-radius: 5px;
+    font-weight: bolder;
+    border-color: #6a6a6aa8;
+    height: 40px;
+    width: 150px;
+}
+.modal-submit{
+    z-index: 15;
+    position: absolute;
+    top: 698px;
+    right: 50px;
+    background-color: #FDCB13 ;
+    color: #1F2D30 ;
+    border: solid 1px;
+    border-radius: 5px;
+    font-weight: bolder;
+    border-color: #DE9E1F;
+    height: 40px;
+    width: 150px;
+}
+
+
+
+
+
+.menu-flex{
+    display: flex;
+}
+.add-bolsa-submit{
+    height: 375px;
+    width: 225px;
+    box-shadow: 1px 2px 8px 0px #80808026;
+    margin-bottom: 35px;
+    background-color: white;
+    margin-bottom: 220px;
+    margin-left: 30px;
+    color: #1F2D30;
+}
+.img-submit{
+    height: 70px;
+}
+.img-submit-icon{
+    max-height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 25px;
+    max-width: 130px;
+    vertical-align: middle;
+}
+.submit-text-university{
+    margin-top: 20px;
+    font-weight: bolder;
+    font-size: 11px;
+    text-align: center;
+}
+.submit-text-course{
+    margin-top: 5px;
+    font-weight: bold;
+    color:#007A8D;
+    text-align: center;
+    font-size: 15px;
+}
+.submit-score{
+    display: flex;
+    margin-top: 10px;
+}
+.submit-text-score{
+    color: #1F2D30;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 55px;
+    margin-right: 5px;
+}
+.submit-img-star img{
+    height: 12px;
+}
+.submit-img-star img{
+    margin-left: 2px;
+}
+.submit-hr{
+    width: 180px;
+    border-color: #8080801c;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.submit-text-kind{
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: 11px;
+    text-align: center;
+}
+.submit-text-startDate {
+    margin-top: 10px;
+    color: #1F2D30;
+    font-size: 10px;
+    text-align: center;
+}
+.submit-text-fullPrice{
+    margin-top: 10px;
+    margin-top: 10px;
+    font-size: 10px;
+    text-align: center;
+    text-decoration: line-through;
+}
+.submit-text-discount{
+    display: flex;
+    margin-top: 10px;
+    font-size: 11px;
+    text-align: center;
+    margin-left: 68px;
+}
+.submit-text-discountPrice{
+    color: #0FA866;
+    font-size: 15px;
+    font-weight: bold;
+}
+.submit-text-discountPricemes{
+    margin-top: 3px;
+    margin-left: 2px;
+}
+.submit-excluir{
+    background-color: white;
+    color: #007A8D;
+    border: solid 1px;
+    border-radius: 5px;
+    font-weight: bolder;
+    border-color: #18ACC4;
+    width: 75px;
+    height: 28px;
+}
+.submit-button{
+    margin-left: 20px;
+    margin-top: 12px;
+}
+.submit-Veroferta{
+    background-color: #FDCB13 ;
+    color: #1F2D30 ;
+    border: solid 1px;
+    border-radius: 5px;
+    font-weight: bolder;
+    border-color: #DE9E1F;
+    width: 95px;
+    height: 28px;
+    margin-left: 11px;
+}
+.submit-Veroferta:disabled{
+    background-color: #d5d2d2;
+    color: #6a6a6aa8;
+    border: solid 1px;
+    border-radius: 5px;
+    font-weight: bolder;
+    border-color: #6a6a6aa8;
+    width: 95px;
+    height: 28px;
 }

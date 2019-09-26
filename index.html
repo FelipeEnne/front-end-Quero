@@ -16,7 +16,7 @@
 			<img Onclick="offOverlay()" class="overlay-icon" src="assets/img/exit.png" alt="exit" title="exit">
 			<div class="modal-content">
 				<div class="modal-menu">
-				<form>
+
 
 				<div>
 					<div class="modal-title text-color-default">Adicionar bolsa</div>
@@ -80,33 +80,21 @@
 				<hr class="hr-modal-first"/>
 
 
-				<div class="modal-results" id="first-result">
-
-					
-				</div>
-
-				<div class="modal-results" id="second-result">
-					
-				</div>
-
-				<div class="modal-results" id="third-result">
-					
-				</div>
-
-				<div class="modal-results" id="fourth-result">
-					
-				</div>
-
-				<div class="modal-results" id="fifth-result">
-					
-				</div>
+				<div class="modal-results" id="first-result"></div>
+				<div class="modal-results" id="second-result"></div>
+				<div class="modal-results" id="third-result"></div>
+				<div class="modal-results" id="fourth-result"></div>
+				<div class="modal-results" id="fifth-result"></div>
 				
 
+				<div>
+					<input Onclick="addresultsHome()" class="modal-submit" id="adicionarBolsa" type="submit" value="Adicionar bolsa(s)" disabled>
+				</div>
 
-				</form>
+
 				</div>
 				<div>
-					<button Onclick="offOverlay()" class="modal-cancelar">Cancelar</button>
+					<button Onclick="offOverlay();" class="modal-cancelar">Cancelar</button>
 				</div>
 			</div>
 		</div>
@@ -211,6 +199,7 @@
 
 		<section>
 			<div class="menu">
+			<div class="menu-flex">
 			<div class="add-bolsa">
 				<div class="plus-img">
 					<a Onclick="onOverlay()">
@@ -221,6 +210,29 @@
 				<div class="plus-title">Adicionar bolsa</div>
 				<div class="plus-text">Clique para adicionar bolsas de<br> cursos do seu interesse</div>
 			</div>
+
+			<div id="bolsaSubmit-fist" class="add-bolsa-submit" style="display: none;">
+				
+			</div>
+
+
+			<div id="bolsaSubmit-second" class="add-bolsa-submit" 
+			style="display: none;" >
+
+
+			</div>
+
+			<div id="bolsaSubmit-third" class="add-bolsa-submit" 
+			style="display: none;">
+				
+			</div>
+
+
+
+
+
+
+
 			</div>
 		</section>
 	</main>

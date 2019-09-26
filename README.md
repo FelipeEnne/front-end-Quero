@@ -36,6 +36,15 @@
 
 * Criando o submit;
 
+## 26/09/2019
+
+* Finalizando o botao submit;
+* Motrando resultados na pagina inicial;
+* Limitando em apenas 3 resultados;
+* Finalizando o tela para o computador
+- Falta o filtro do semestre;
+- Falta o botão Indisponível {enabled: false};
+
 
 
 
