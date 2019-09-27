@@ -28,7 +28,26 @@ request.onload = function() {
   filterAll();
 
   resultsOverlay();
+
+
+  sizeOfThings();
+
 }
+
+function sizeOfThings(){
+  var windowWidth = window.innerWidth;
+  
+  var screenWidth = screen.width;
+  screenWidth = screenWidth - 240;
+  
+  document.getElementById("myRange");
+  let tamanho = "width: "+screenWidth+"px;";
+  console.log(tamanho);
+
+  var footerchatmobile = document.getElementsByClassName("footer-chat-mobile");
+  footerchatmobile.setAttribute("style",tamanho);
+};
+
 
 
 //overlay primeiro select
@@ -363,7 +382,7 @@ function showResultModal(){
 function resultsOverlay(){
 
 	getIndexAfterFilter();
-	console.log(resultsIndex);
+	//console.log(resultsIndex);
 	showResultModal();
 
 	addcheckboxSelect();
