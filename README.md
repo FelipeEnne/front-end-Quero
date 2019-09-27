@@ -1,10 +1,14 @@
 # Resolvendo o Teste de Front End da Quero Educação
 
+### Instruções
+
+#### Para executar o projeto é necessário que dentro da pasta QueroFrontEnd abrir o arquivo index.html.
+(Obs: preferência Google Crome)
 
 ## 23/09/2019
 
 * Iniciando o projeto criando os arquivos html, css e js;
-* Dividindo os aquivos nas pastas e copiando as imagens.
+* Dividindo os arquivos nas pastas e copiando as imagens.
 
 #### Criando o primeiro layout
 
@@ -39,7 +43,7 @@
 ## 26/09/2019
 
 * Finalizando o botao submit;
-* Motrando resultados na pagina inicial;
+* Mostrando resultados na pagina inicial;
 * *Limitando em apenas 3 resultados*;
 * Finalizando o tela para o computador
 * Criando o filtro do semestre;
@@ -63,4 +67,4 @@
 ### Tela para mobile M (375px) finalizada
 ### Tela para mobile S (320px) finalizada
 
-Obs: Devido a minha pressa acabou passando despercebido que eu não utilizei o conceito Mobile First. O que foi um erro, pois teria faciltado o trabalho.
+Obs: Devido a minha pressa acabou passando despercebido que eu não utilizei o conceito Mobile First. O que foi um erro, pois teria facilitado o trabalho.
