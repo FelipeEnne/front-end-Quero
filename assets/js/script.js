@@ -204,6 +204,7 @@ function addLogo(id,index){
 	let element = document.getElementById(id);
 	element.appendChild(div);
 }
+/*
 function addText(id,index){
 	let div1 = document.createElement("div");
 
@@ -259,6 +260,67 @@ function addTextBolsa(id,index){
 	let element = document.getElementById(id);
 	element.appendChild(div1);
 }
+*/
+function addTextAndBolsa(id,index){
+	let div0 = document.createElement("div");
+	div0.setAttribute("class","modal-title-result-mobile");
+
+	let div1 = document.createElement("div");
+
+	let div2 = document.createElement("div");
+	div2.setAttribute("class","modal-title-result");
+	div2.innerHTML = myObj[index]["course"]["name"];
+	
+	
+	div1.appendChild(div2);
+
+
+	let div3 = document.createElement("div");
+	div3.setAttribute("class","modal-text-result");
+	div3.innerHTML = myObj[index]["course"]["level"];
+
+	div1.appendChild(div3);
+	
+	///////////////////////////////
+	let element = document.getElementById(id);
+	div0.appendChild(div1);
+	////////////////////////////////////
+
+	div1 = document.createElement("div");
+	div1.setAttribute("class","modal-bolsa");
+	
+	
+	div2 = document.createElement("div");
+	div2.setAttribute("class","modal-text-bolsa");
+	div2.innerHTML = "Bolsa de ";
+
+	margin = ((myObj[index]["course"]["name"]).length - 8)*7.5;
+	div2.style.marginLeft = -margin+"px";
+	
+
+	strong = document.createElement("strong");
+	strong.setAttribute("class","modal-bold-bolsa");
+	strong.innerHTML = myObj[index]["discount_percentage"]+"%";
+
+	div2.appendChild(strong);
+	div1.appendChild(div2);
+
+
+	div3 = document.createElement("div");
+	div3.style.marginLeft = -margin+"px";
+	let strong1 = document.createElement("strong");
+	strong1.setAttribute("class","modal-bold-bolsa");
+	strong1.innerHTML = "R$ "+Math.round(myObj[index]["price_with_discount"])+"/mês";
+
+	div3.appendChild(strong1);
+	div1.appendChild(div3);
+	
+
+	div0.appendChild(div1);
+	element.appendChild(div0);
+}
+
+
 var counthrID = 1;
 function addhr(id){
 	let hr = document.createElement("hr");
@@ -273,8 +335,10 @@ function addhr(id){
 function addResultModal(id,index,idinput){
 	addCheckbox(id,idinput);
 	addLogo(id,index);
-	addText(id,index);
-	addTextBolsa(id,index);
+	//addText(id,index);
+	//addTextBolsa(id,index);
+
+	addTextAndBolsa(id,index);
 	addhr(id);
 }
 

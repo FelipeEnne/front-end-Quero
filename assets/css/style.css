@@ -275,7 +275,7 @@ nav{
     box-shadow: 1px 2px 8px 0px #80808026;
     margin-bottom: 35px;
     background-color: white;
-    margin-bottom: 220px;
+    margin-bottom: 0px;
 }
 .plus-img{
     padding-top: 90px;
@@ -914,8 +914,6 @@ footer{
     .modal-overlay{
         left: 7%;
     }
-
-
 }
 
 
@@ -932,8 +930,13 @@ footer{
 .first-footer-mobile{
     display: none;
 }
+.modal-title-result-mobile{
+    display: flex;
+}
 
-@media only screen and (max-width: 425px) and (min-width: 375px){
+
+
+@media only screen and (max-width: 425px){
 
     .header-layout{
         display: none;
@@ -1069,11 +1072,12 @@ footer{
         width: 294px;
         box-shadow: 1px 2px 8px 0px #80808026;
         background-color: white;
-        margin-bottom: 100px; 
+        margin-bottom: 0px; 
     }
     .plus-icon {
-        margin-left: unset;
+        
         margin-right: unset;
+        margin-left: 5px;
     }
     .plus-img {
         padding-top: 40px;
@@ -1123,7 +1127,6 @@ footer{
 
 
 
-
     .first-footer{
         display: none;
     }
@@ -1157,30 +1160,294 @@ footer{
     .icon-info2{
         width: 28px;
     }
-}
 
-@media only screen and (max-width: 375px) and (min-width: 320px){
+    footer{
+        height: 200px;
+        margin-top: 100px;
+    }
 
-    .footer-chat-mobile {
-        background-color: #007A8D;
-        width: 123px;
-        margin-top: 2px;
+
+
+
+    #overlay{
+        height: 2140px;
+    }
+
+
+    .modal-overlay{
+        left: 0;
+        margin-top: 32px;
+    }
+
+    .modal-content {
+        position: absolute;
+        width: 425px;
+        height: 760px;
+        background-color: #ffffff;
+    }
+
+    .modal-overlay .overlay-icon {
+        margin-left: 386px
+    }
+
+    .modal-title {
+        margin-top: 19px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 60px;
+    }
+    .modal-text {
+        margin-top: 0px;
+        font-size: 14px;
+        margin-left: 60px;
+    }
+
+    .modal-input1{
+        display: block;
+        margin-top: 25px;
+        margin-left: 60px;
+    }
+    .modal-text-input{
+        margin-top: 15px;
+    }
+    .modal-input2{
+        display: block;
+        margin-left: 60px;
+    }
+    .modal-ordenar{
+        display: block;
+    }
+    .modal-ordenar-modo{
+       margin-left: -63px 
+    }
+    .modal-indice{
+        margin-left: 10px;
+    }
+    .modal-resultado {
+        margin-right: 251px;
+        margin-left: 15px;
+    }
+
+    .hr-modal-first {
+        width: 393px;
+        margin-left: 11px;
+    }
+    .hr-modal {
+        width: 393px;
+        margin-left: 11px;
+    }
+    .modal-results {
+        height: 80px;
+    }
+
+
+    .modal-content {
+        position: absolute;
+        width: 425px;
+        height: 1030px;
+        background-color: #ffffff;
+    }
+    .modal-reults-margin {
+        margin-top: 12px;
+        margin-left: 25px;
+    }
+    .modal-img{
+        margin-top: 12px;
+    }
+    .modal-bolsa {
+        margin-left: 35px;
         text-align: center;
-        height: 65px;
+        justify-content: center;
+    }
+
+    .modal-cancelar {
+        top: 970px;
+        right: 275px;
+        width: 100px;
+        height: 45px;
+    }
+
+    .modal-submit:disabled {
+        top: 970px;
+        right: 55px;
+        height: 45px;
+        width: 165px;
+    }
+    .modal-submit {
+        top: 970px;
+        right: 55px;
+        height: 45px;
+        width: 165px;
+    }
+    .modal-title-result{
+        margin-top: -9px;
+    }
+    .modal-title-result-mobile{
+        display: block;
+    }
+    
+    .add-bolsa-submit{
+        width: 286px;
+        margin-bottom: 0px;
+        margin-left: 57px;
+    }
+
+    .img-submit-icon{
         padding-top: 10px;
     }
 
+    .submit-score{
+        margin-left: 32px;
+    }
+    .submit-text-discount {
+        margin-left: 92px;
+    }
+
+    .submit-excluir{
+        width: 85px;
+        height: 40px;
+        margin-left: 37px;
+    }
+
+    .submit-Veroferta{
+        width: 105px;
+        height: 40px;
+        margin-left: 11px;
+    }
+    .submit-Veroferta:disabled{
+        width: 105px;
+        height: 40px;
+        margin-left: 11px;
+    }
+
+    .add-bolsa-submit {
+        height: 355px;
+    }
+
+
+
+
+
+
 }
+
+@media only screen and (max-width: 375px){
+
+    .footer-chat-mobile {
+        width: 123px;
+    }
+
+    .add-bolsa-submit{
+        margin-left: 33px;
+    }
+
+    .submit-excluir{
+        margin-left: 22px;
+    }
+
+    .modal-overlay .overlay-icon {
+        margin-left: 336px;
+    }
+
+    .modal-content{
+        width: 375px;
+    }
+
+    .hr-modal-first {
+        width: 340px;
+        margin-left: 20px;
+    }
+
+    .hr-modal {
+        width: 340px;
+        margin-left: 20px;
+    }
+
+    .modal-cancelar {
+        right: 235px;
+    }
+
+
+    .modal-resultado {
+        margin-right: 190px
+    }
+
+}
+
 
 @media only screen and (max-width: 320px){
 
     .footer-chat-mobile {
-        background-color: #007A8D;
         width: 105px;
-        margin-top: 2px;
-        text-align: center;
-        height: 65px;
-        padding-top: 10px;
     }
+
+    .add-bolsa-submit{
+        margin-left: 7px;
+    }
+
+    .submit-excluir{
+        margin-left: 22px;
+    }
+
+    .modal-overlay .overlay-icon {
+        margin-left: 285px;
+    }
+
+    .modal-content{
+        width: 320px;
+    }
+
+    .modal-title {
+        margin-left: 30px;
+    }
+
+    .modal-text {
+        margin-left: 30px;
+    }
+
+    .modal-input1{
+        margin-left: 30px;
+    }
+
+    .modal-input2{
+        margin-left: 30px;
+    }
+
+
+    .modal-resultado {
+        margin-right: 140px;
+    }
+
+    .modal-reults-margin {
+        margin-left: 15px;
+
+    }
+
+    
+
+    .hr-modal-first {
+        width: 280px;
+        margin-left: 20px;
+    }
+
+    .hr-modal {
+        width: 280px;
+        margin-left: 20px;
+    }
+
+    .modal-cancelar {
+        right: 204px;
+    }
+    .modal-submit:disabled{
+        right: 18px;
+    }
+    .modal-submit{
+        right: 18px;
+    }
+
+    .modal-img-width{
+        max-width: auto;
+    }
+
 
 }

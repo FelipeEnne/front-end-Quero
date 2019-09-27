@@ -57,5 +57,10 @@
 * Criando Selecionar Semestre;
 * Finalizando a primeira tela mobile.
 
+## 27/09/2019
+
+### Tela para mobile L (425px) finalizada
+### Tela para mobile M (375px) finalizada
+### Tela para mobile S (320px) finalizada
 
 Obs: Devido a minha pressa acabou passando despercebido que eu não utilizei o conceito Mobile First. O que foi um erro, pois teria faciltado o trabalho.
