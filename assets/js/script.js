@@ -41,7 +41,7 @@ function mobileOnload(){
   var screenWidth = screen.width;
   //console.log(screenWidth);
 
-  
+  if(screenWidth<=425){
   document.getElementById("myRange");
   let widthChatWidth = screenWidth/3-2;
   let widthChat = widthChatWidth + "px";
@@ -76,7 +76,7 @@ function mobileOnload(){
   overlayhrModal[2].setAttribute("style","width: "+ hrModal+"px");
   overlayhrModal[3].setAttribute("style","width: "+ hrModal+"px");
   overlayhrModal[4].setAttribute("style","width: "+ hrModal+"px");
-
+}
 };
 
 
