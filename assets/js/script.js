@@ -38,14 +38,19 @@ function sizeOfThings(){
   var windowWidth = window.innerWidth;
   
   var screenWidth = screen.width;
-  screenWidth = screenWidth - 240;
+  console.log(screenWidth);
+  screenWidth = screenWidth - 340;
   
   document.getElementById("myRange");
-  let tamanho = "width: "+screenWidth+"px;";
-  console.log(tamanho);
+  let tamanho = screenWidth + "px";
+  //console.log(screenWidth);
 
   var footerchatmobile = document.getElementsByClassName("footer-chat-mobile");
-  footerchatmobile.setAttribute("style",tamanho);
+  console.log(footerchatmobile);
+
+  //footerchatmobile[0].style.width = tamanho;
+  //footerchatmobile[1].style.width = tamanho;
+  //footerchatmobile[2].style.width = tamanho;
 };
 
 
