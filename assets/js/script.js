@@ -8,8 +8,7 @@ function offOverlay() {
 }
 
 
-
-var myObj, myJSON, text, obj;
+var myObj;
 
 var requestURL = 'https://testapi.io/api/redealumni/scholarships';
 
@@ -30,27 +29,54 @@ request.onload = function() {
   resultsOverlay();
 
 
-  sizeOfThings();
+  mobileOnload();
+  
+
 
 }
 
-function sizeOfThings(){
+function mobileOnload(){
   var windowWidth = window.innerWidth;
   
   var screenWidth = screen.width;
   //console.log(screenWidth);
-  screenWidth = screenWidth/3-2;
+
   
   document.getElementById("myRange");
-  let tamanho = screenWidth + "px";
+  let widthChatWidth = screenWidth/3-2;
+  let widthChat = widthChatWidth + "px";
   //console.log(tamanho);
 
-  var footerchatmobile = document.getElementsByClassName("footer-chat-mobile");
-  //console.log(footerchatmobile);
+  var footerChatMobile = document.getElementsByClassName("footer-chat-mobile");
+  footerChatMobile[0].style.width = widthChat;
+  footerChatMobile[1].style.width = widthChat;
+  footerChatMobile[2].style.width = widthChat;
 
-  footerchatmobile[0].style.width = tamanho;
-  footerchatmobile[1].style.width = tamanho;
-  footerchatmobile[2].style.width = tamanho;
+
+  let widthOverlayiconWidth = screenWidth-35;
+  let widthOverlay = widthOverlayiconWidth + "px";
+  var overlayIcon = document.getElementsByClassName("overlay-icon");
+  overlayIcon[0].setAttribute("style", "margin-left: "+widthOverlay);
+
+  var overlayContent = document.getElementsByClassName("modal-content");
+  overlayContent[0].setAttribute("style", "width: "+ screenWidth+"px");
+
+  let ModalResultado = screenWidth - 180;
+  var overlayModalResultado = document.getElementsByClassName("modal-resultado");
+  overlayModalResultado[0].setAttribute("style","margin-right: "+ ModalResultado+"px");
+
+  let hrModal = screenWidth - 35;
+  var overlayhrModal = document.getElementsByClassName("hr-modal-first");
+  overlayhrModal[0].setAttribute("style","width: "+ hrModal+"px");
+
+
+  var overlayhrModal = document.getElementsByClassName("hr-modal");
+  overlayhrModal[0].setAttribute("style","width: "+ hrModal+"px");
+  overlayhrModal[1].setAttribute("style","width: "+ hrModal+"px");
+  overlayhrModal[2].setAttribute("style","width: "+ hrModal+"px");
+  overlayhrModal[3].setAttribute("style","width: "+ hrModal+"px");
+  overlayhrModal[4].setAttribute("style","width: "+ hrModal+"px");
+
 };
 
 
