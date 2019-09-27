@@ -220,7 +220,7 @@ function addLogo(id,index){
 		img.setAttribute("style","margin-top: 10px;");
 	}
 
-	img.setAttribute("src", "assets/img/"+nameUniversity.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")+".png");
+	img.setAttribute("src",myObj[index]["university"]["logo_url"]);
 
 
 	div.appendChild(img);
