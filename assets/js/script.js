@@ -38,19 +38,19 @@ function sizeOfThings(){
   var windowWidth = window.innerWidth;
   
   var screenWidth = screen.width;
-  console.log(screenWidth);
-  screenWidth = screenWidth - 340;
+  //console.log(screenWidth);
+  screenWidth = screenWidth/3-2;
   
   document.getElementById("myRange");
   let tamanho = screenWidth + "px";
-  //console.log(screenWidth);
+  //console.log(tamanho);
 
   var footerchatmobile = document.getElementsByClassName("footer-chat-mobile");
-  console.log(footerchatmobile);
+  //console.log(footerchatmobile);
 
-  //footerchatmobile[0].style.width = tamanho;
-  //footerchatmobile[1].style.width = tamanho;
-  //footerchatmobile[2].style.width = tamanho;
+  footerchatmobile[0].style.width = tamanho;
+  footerchatmobile[1].style.width = tamanho;
+  footerchatmobile[2].style.width = tamanho;
 };
 
 
@@ -220,7 +220,7 @@ function addLogo(id,index){
 		img.setAttribute("style","margin-top: 10px;");
 	}
 
-	img.setAttribute("src", "assets/img/"+nameUniversity.toLowerCase()+".png");
+	img.setAttribute("src", "assets/img/"+nameUniversity.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")+".png");
 
 
 	div.appendChild(img);
