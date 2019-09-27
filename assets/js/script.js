@@ -609,7 +609,7 @@ function addImageHome(id,index){
 		img.setAttribute("style","padding-top: 15px;");
 	}
 
-	img.setAttribute("src", "assets/img/"+nameUniversity.toLowerCase()+".png");
+	img.setAttribute("src", myObj[index]["university"]["logo_url"]);
 
 
 	div.appendChild(img);
