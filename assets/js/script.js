@@ -855,20 +855,21 @@ function filterSemesterall(){
 	//index começa a contar no 1 
 	for (let i = 1; i < resultsHome.length+1; i++){
 		let semester = (myObj[i]["enrollment_semester"]).toString().substr(-1);
-		console.log(semester);
+		//console.log(semester);
 
 		if(semester == 1 || semester == 2){
 			let div1 = document.getElementById("bolsaSubmit-fist");
 			let div2 = document.getElementById("bolsaSubmit-second");
 			let div3 = document.getElementById("bolsaSubmit-third");
+			//console.log(div1.hasChildNodes());
 			if(div1.hasChildNodes() && i == 1){
 				div1.setAttribute("style","display: block;");
 			}
-			if(div1.hasChildNodes() && i == 2){
+			if(div2.hasChildNodes() && i == 2){
 				
 				div2.setAttribute("style","display: block;");
 			}
-			if(div1.hasChildNodes() && i == 3){
+			if(div3.hasChildNodes() && i == 3){
 				
 				div3.setAttribute("style","display: block;");
 			}
@@ -892,7 +893,7 @@ function filterSemester1(){
 	//index começa a contar no 1 
 	for (let i = 1; i < resultsHome.length+1; i++){
 		let semester = (myObj[i]["enrollment_semester"]).toString().substr(-1);
-		console.log(semester);
+		//console.log(semester);
 
 		if(semester == 1){
 			let div1 = document.getElementById("bolsaSubmit-fist");
@@ -901,11 +902,11 @@ function filterSemester1(){
 			if(div1.hasChildNodes() && i == 1){
 				div1.setAttribute("style","display: none;");
 			}
-			if(div1.hasChildNodes() && i == 2){
+			if(div2.hasChildNodes() && i == 2){
 				
 				div2.setAttribute("style","display: none;");
 			}
-			if(div1.hasChildNodes() && i == 3){
+			if(div3.hasChildNodes() && i == 3){
 				
 				div3.setAttribute("style","display: none;");
 			}
@@ -932,7 +933,7 @@ function filterSemester2(){
 	//index começa a contar no 1 
 	for (let i = 1; i < resultsHome.length+1; i++){
 		let semester = (myObj[i]["enrollment_semester"]).toString().substr(-1);
-		console.log(semester);
+		//console.log(semester);
 
 		if(semester == 2){
 			let div1 = document.getElementById("bolsaSubmit-fist");
@@ -941,11 +942,11 @@ function filterSemester2(){
 			if(div1.hasChildNodes() && i == 1){
 				div1.setAttribute("style","display: none;");
 			}
-			if(div1.hasChildNodes() && i == 2){
+			if(div2.hasChildNodes() && i == 2){
 				
 				div2.setAttribute("style","display: none;");
 			}
-			if(div1.hasChildNodes() && i == 3){
+			if(div3.hasChildNodes() && i == 3){
 				
 				div3.setAttribute("style","display: none;");
 			}

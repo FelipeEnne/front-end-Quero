@@ -31,23 +31,31 @@
 ## 25/09/2019
 
 * Finalizando outputs dos resultados;
-* Limitando em apenas 5 resultados
+* *Limitando em apenas 5 resultados*;
 * Testado somente no chrome;
 
-* Criando o submit;
+* Criando o submit.
 
 ## 26/09/2019
 
 * Finalizando o botao submit;
 * Motrando resultados na pagina inicial;
-* Limitando em apenas 3 resultados;
+* *Limitando em apenas 3 resultados*;
 * Finalizando o tela para o computador
-- Falta o filtro do semestre;
-- Falta o botão Indisponível {enabled: false};
+* Criando o filtro do semestre;
+* Criando o botão Indisponível {enabled: false}.
 
-##### Tela do computador finalizada
+### Tela do computador finalizada
 
+* Criando uma tela para tablet (768px a 425px);
+* Iniciando tela mobile
 
+### Tela mobile iniciada
+
+* Criando header;
+* Criando nav;
+* Criando Selecionar Semestre;
+* Finalizando a primeira tela mobile.
 
 
 Obs: Devido a minha pressa acabou passando despercebido que eu não utilizei o conceito Mobile First. O que foi um erro, pois teria faciltado o trabalho.
