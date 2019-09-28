@@ -330,11 +330,10 @@ function addTextAndBolsa(id,index){
 	div3.innerHTML = myObj[index]["course"]["level"];
 
 	div1.appendChild(div3);
-	
-	///////////////////////////////
+
 	let element = document.getElementById(id);
 	div0.appendChild(div1);
-	////////////////////////////////////
+
 
 	div1 = document.createElement("div");
 	div1.setAttribute("class","modal-bolsa");
@@ -344,9 +343,6 @@ function addTextAndBolsa(id,index){
 	div2.setAttribute("class","modal-text-bolsa");
 	div2.innerHTML = "Bolsa de ";
 
-	margin = ((myObj[index]["course"]["name"]).length - 8)*7.5;
-	div2.style.marginLeft = -margin+"px";
-	
 
 	strong = document.createElement("strong");
 	strong.setAttribute("class","modal-bold-bolsa");
@@ -357,7 +353,6 @@ function addTextAndBolsa(id,index){
 
 
 	div3 = document.createElement("div");
-	div3.style.marginLeft = -margin+"px";
 	let strong1 = document.createElement("strong");
 	strong1.setAttribute("class","modal-bold-bolsa");
 	strong1.innerHTML = "R$ "+Math.round(myObj[index]["price_with_discount"])+"/mês";
@@ -498,17 +493,46 @@ function filterResults(){
 
 //submit
 var checkboxSelect = [0,0,0,0,0];
+var reducer = (accumulator, currentValue) => accumulator + currentValue;
+
 function checkboxChange1(){
+
+	if(checkboxSelect.reduce(reducer) <= 3){
+			let checkbox = document.getElementById("checkbox1");
+			checkbox.parentNode.childNodes[0].removeAttribute("disabled");
+	}
 	
 	if (checkboxSelect[0] == 0) {
 		checkboxSelect[0] = 1;
+
+		if(checkboxSelect.reduce(reducer) > 3){
+			alert("Pode selecionar apenas 3 bolsas");
+			let checkbox = document.getElementById("checkbox1");
+			checkbox.parentNode.childNodes[0].setAttribute("disabled","disabled");
+			checkboxSelect[0] = 0;
+		}
+		
+
+
 	}else{
 		checkboxSelect[0] = 0;
 	}
+
+
+	
+	console.log(checkboxSelect.reduce(reducer));
+	console.log(checkboxSelect);
+
+
 	enableSubmit();
 }
 function checkboxChange2(){
+	checkboxSelectReturn = checkboxSelect;
 	if (checkboxSelect[1] == 0) {
+		if (checkboxSelect[1] != checkboxSelectReturn[1]) {
+			document.getElementById("checkbox2").checked = false;
+			checkboxSelect = checkboxSelectReturn;
+		}
 		checkboxSelect[1] = 1;
 	}else{
 		checkboxSelect[1] = 0;
@@ -516,7 +540,12 @@ function checkboxChange2(){
 	enableSubmit();
 }
 function checkboxChange3(){
+	checkboxSelectReturn = checkboxSelect;
 	if (checkboxSelect[2] == 0) {
+		if (checkboxSelect[2] != checkboxSelectReturn[2]) {
+			document.getElementById("checkbox3").checked = false;
+			checkboxSelect = checkboxSelectReturn;
+		}
 		checkboxSelect[2] = 1;
 	}else{
 		checkboxSelect[2] = 0;
@@ -524,7 +553,12 @@ function checkboxChange3(){
 	enableSubmit();
 }
 function checkboxChange4(){
+	checkboxSelectReturn = checkboxSelect;
 	if (checkboxSelect[3] == 0) {
+		if (checkboxSelect[3] != checkboxSelectReturn[3]) {
+			document.getElementById("checkbox4").checked = false;
+			checkboxSelect = checkboxSelectReturn;
+		}
 		checkboxSelect[3] = 1;
 	}else{
 		checkboxSelect[3] = 0;
@@ -532,7 +566,12 @@ function checkboxChange4(){
 	enableSubmit();	
 }
 function checkboxChange5(){
+	checkboxSelectReturn = checkboxSelect;
 	if (checkboxSelect[4] == 0) {
+		if (checkboxSelect[4] != checkboxSelectReturn[4]) {
+			document.getElementById("checkbox5").checked = false;
+			checkboxSelect = checkboxSelectReturn;
+		}
 		checkboxSelect[4] = 1;
 	}else{
 		checkboxSelect[4] = 0;
@@ -542,6 +581,10 @@ function checkboxChange5(){
 
 
 function addcheckboxSelect(){
+
+	
+
+
 	if(resultsIndex[0]){
 		let checkbox1 = document.getElementById("checkbox1");
 		checkbox1.setAttribute("Onclick", "checkboxChange1();");
@@ -561,12 +604,15 @@ function addcheckboxSelect(){
 	if(resultsIndex[4]){
 		let checkbox5 = document.getElementById("checkbox5");
 		checkbox5.setAttribute("Onclick", "checkboxChange5();");
-	}
-	
+	}	
 }
+
 function enableSubmit(){
 
 	let x = 0;
+	
+	checkboxSelectReturn = checkboxSelect;
+
 	for (let i = 0; i < checkboxSelect.length; i++) {
 		if (checkboxSelect[i] == 1) {
 			let enablebutton = document.getElementById("adicionarBolsa");
@@ -580,6 +626,7 @@ function enableSubmit(){
 		enablebutton.setAttribute("disabled","disabled");
 	}
 
+	//console.log(checkboxSelect.reduce(reducer));
 	//console.log(checkboxSelect);
 	//console.log(resultsIndex);
 }
@@ -720,6 +767,9 @@ function addKindHome(id,index){
 	div.setAttribute("class","submit-text-kind");
 
 	let namekind = myObj[index]["course"]["kind"];
+	if (namekind == "EaD") {
+		namekind = "ENSINO A DISTÂNCIA";
+	}
 	let nameshift = myObj[index]["course"]["shift"];
 	div.innerHTML = namekind.toUpperCase()+" • " +nameshift.toUpperCase();
 	
@@ -764,7 +814,6 @@ function addfullPriceHome(id,index){
 	
 	element.appendChild(div);
 }
-
 function addtextHomeEnabled(id,index){
 
 	let div1 = document.createElement("div");

@@ -361,7 +361,6 @@ footer{
     justify-content: center;
     margin-top: 40px;
     font-size: 11px;
-    font-weight: bold;
 }
 .icon-heart{
     width: 11px;
@@ -544,6 +543,10 @@ footer{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+
+
+
 .checkbox-first{
     margin-right: 20px;
 }
@@ -663,6 +666,8 @@ footer{
     width: 130px;
 }
 .modal-title-result{
+    font-size: 14px;
+    letter-spacing: -0.5px;
     font-size: 15px;
     color: #007A8D;
     margin-left: 10px;
@@ -676,7 +681,7 @@ footer{
     margin-top: 3px;
 }
 .modal-bolsa{
-    margin-left: 245px;
+    width: 100px;
     text-align: center;
     justify-content: center;
 }
@@ -772,7 +777,8 @@ footer{
     font-weight: bold;
     color:#007A8D;
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
+    letter-spacing: -0.5px;
 }
 .submit-score{
     display: flex;
@@ -944,6 +950,8 @@ footer{
 }
 .modal-title-result-mobile{
     display: flex;
+    width: 410px;
+    justify-content: space-between;
 }
 
 

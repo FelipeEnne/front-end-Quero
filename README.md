@@ -2,8 +2,11 @@
 
 ### Instruções
 
-#### Para executar o projeto é necessário abrir o arquivo index.html dentro da pasta QueroFrontEnd.
-(Obs: preferência Google Crome)
+#### Para executar o projeto é necessário abrir o arquivo index.html por um navegador dentro da pasta QueroFrontEnd.
+
+Obs:
+* Sempre quando mudar o tamanho da página é necessário a atualização da mesma.
+* preferência Google Crome;
 
 ## 23/09/2019
 
