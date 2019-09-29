@@ -316,6 +316,7 @@ function addTextAndBolsa(id,index){
 	div0.setAttribute("class","modal-title-result-mobile");
 
 	let div1 = document.createElement("div");
+	div1.setAttribute("class","modal-title-result-div");
 
 	let div2 = document.createElement("div");
 	div2.setAttribute("class","modal-title-result");
@@ -346,7 +347,7 @@ function addTextAndBolsa(id,index){
 
 	strong = document.createElement("strong");
 	strong.setAttribute("class","modal-bold-bolsa");
-	strong.innerHTML = myObj[index]["discount_percentage"]+"%";
+	strong.innerHTML = Math.round(myObj[index]["discount_percentage"])+"%";
 
 	div2.appendChild(strong);
 	div1.appendChild(div2);
@@ -494,12 +495,22 @@ function filterResults(){
 //submit
 var checkboxSelect = [0,0,0,0,0];
 var reducer = (accumulator, currentValue) => accumulator + currentValue;
-
+function removeDisable(){
+	let checkbox1 = document.getElementById("checkbox1");
+	checkbox1.parentNode.childNodes[0].removeAttribute("disabled");
+	let checkbox2 = document.getElementById("checkbox2");
+	checkbox2.parentNode.childNodes[0].removeAttribute("disabled");
+	let checkbox3 = document.getElementById("checkbox3");
+	checkbox3.parentNode.childNodes[0].removeAttribute("disabled");
+	let checkbox4 = document.getElementById("checkbox4");
+	checkbox4.parentNode.childNodes[0].removeAttribute("disabled");
+	let checkbox5 = document.getElementById("checkbox5");
+	checkbox5.parentNode.childNodes[0].removeAttribute("disabled");
+}
 function checkboxChange1(){
 
 	if(checkboxSelect.reduce(reducer) <= 3){
-			let checkbox = document.getElementById("checkbox1");
-			checkbox.parentNode.childNodes[0].removeAttribute("disabled");
+		removeDisable();
 	}
 	
 	if (checkboxSelect[0] == 0) {
@@ -511,68 +522,78 @@ function checkboxChange1(){
 			checkbox.parentNode.childNodes[0].setAttribute("disabled","disabled");
 			checkboxSelect[0] = 0;
 		}
-		
-
-
 	}else{
 		checkboxSelect[0] = 0;
 	}
-
-
-	
-	console.log(checkboxSelect.reduce(reducer));
-	console.log(checkboxSelect);
-
-
 	enableSubmit();
 }
 function checkboxChange2(){
-	checkboxSelectReturn = checkboxSelect;
+
+	if(checkboxSelect.reduce(reducer) <= 3){
+		removeDisable();
+	}
+
 	if (checkboxSelect[1] == 0) {
-		if (checkboxSelect[1] != checkboxSelectReturn[1]) {
-			document.getElementById("checkbox2").checked = false;
-			checkboxSelect = checkboxSelectReturn;
-		}
 		checkboxSelect[1] = 1;
+		if(checkboxSelect.reduce(reducer) > 3){
+			alert("Pode selecionar apenas 3 bolsas");
+			let checkbox = document.getElementById("checkbox2");
+			checkbox.parentNode.childNodes[0].setAttribute("disabled","disabled");
+			checkboxSelect[1] = 0;
+		}
+		
 	}else{
 		checkboxSelect[1] = 0;
 	}
 	enableSubmit();
 }
 function checkboxChange3(){
-	checkboxSelectReturn = checkboxSelect;
+	if(checkboxSelect.reduce(reducer) <= 3){
+		removeDisable();
+	}
 	if (checkboxSelect[2] == 0) {
-		if (checkboxSelect[2] != checkboxSelectReturn[2]) {
-			document.getElementById("checkbox3").checked = false;
-			checkboxSelect = checkboxSelectReturn;
-		}
 		checkboxSelect[2] = 1;
+		if(checkboxSelect.reduce(reducer) > 3){
+			alert("Pode selecionar apenas 3 bolsas");
+			let checkbox = document.getElementById("checkbox3");
+			checkbox.parentNode.childNodes[0].setAttribute("disabled","disabled");
+			checkboxSelect[2] = 0;
+		}
 	}else{
 		checkboxSelect[2] = 0;
 	}
 	enableSubmit();
 }
 function checkboxChange4(){
-	checkboxSelectReturn = checkboxSelect;
+	if(checkboxSelect.reduce(reducer) <= 3){
+		removeDisable();
+	}
 	if (checkboxSelect[3] == 0) {
-		if (checkboxSelect[3] != checkboxSelectReturn[3]) {
-			document.getElementById("checkbox4").checked = false;
-			checkboxSelect = checkboxSelectReturn;
-		}
 		checkboxSelect[3] = 1;
+		if(checkboxSelect.reduce(reducer) > 3){
+			alert("Pode selecionar apenas 3 bolsas");
+			let checkbox = document.getElementById("checkbox4");
+			checkbox.parentNode.childNodes[0].setAttribute("disabled","disabled");
+			checkboxSelect[3] = 0;
+		}
 	}else{
 		checkboxSelect[3] = 0;
 	}
 	enableSubmit();	
 }
 function checkboxChange5(){
-	checkboxSelectReturn = checkboxSelect;
+	if(checkboxSelect.reduce(reducer) <= 3){
+		removeDisable();
+	}
 	if (checkboxSelect[4] == 0) {
-		if (checkboxSelect[4] != checkboxSelectReturn[4]) {
-			document.getElementById("checkbox5").checked = false;
-			checkboxSelect = checkboxSelectReturn;
-		}
 		checkboxSelect[4] = 1;
+		if(checkboxSelect.reduce(reducer) > 3){
+			alert("Pode selecionar apenas 3 bolsas");
+			let checkbox = document.getElementById("checkbox5");
+			checkbox.parentNode.childNodes[0].setAttribute("disabled","disabled");
+			checkboxSelect[4] = 0;
+		}
+		
 	}else{
 		checkboxSelect[4] = 0;
 	}
@@ -581,10 +602,6 @@ function checkboxChange5(){
 
 
 function addcheckboxSelect(){
-
-	
-
-
 	if(resultsIndex[0]){
 		let checkbox1 = document.getElementById("checkbox1");
 		checkbox1.setAttribute("Onclick", "checkboxChange1();");

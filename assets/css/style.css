@@ -953,8 +953,12 @@ footer{
     width: 410px;
     justify-content: space-between;
 }
-
-
+.modal-title-result-mobile{
+    display: flex;
+}
+.modal-title-result-div {
+    width: 220px;
+}
 
 @media only screen and (max-width: 425px){
 
@@ -1190,7 +1194,7 @@ footer{
 
 
     #overlay{
-        height: 2140px;
+        height: 2095px;
     }
 
 
@@ -1216,6 +1220,7 @@ footer{
         font-weight: bold;
         margin-left: 60px;
     }
+    
     .modal-text {
         margin-top: 0px;
         font-size: 14px;
@@ -1272,12 +1277,13 @@ footer{
         margin-left: 25px;
     }
     .modal-img{
-        margin-top: 12px;
+        margin: auto;
+        max-width: 85px;
+
     }
     .modal-bolsa {
-        margin-left: 35px;
-        text-align: center;
-        justify-content: center;
+        margin-left: 19px;
+        text-align: left;
     }
 
     .modal-cancelar {
@@ -1300,10 +1306,16 @@ footer{
         width: 165px;
     }
     .modal-title-result{
-        margin-top: -9px;
+        margin-top: 1px;
     }
     .modal-title-result-mobile{
         display: block;
+    }
+    .modal-title-result-div{
+        width: 161px;
+        margin-left: 10px;
+        text-align: left;
+        justify-content: center;
     }
     
     .add-bolsa-submit{
@@ -1463,7 +1475,9 @@ footer{
     }
 
     .modal-img-width{
-        max-width: auto;
+        width: 170px;
+        margin: auto;
+        margin-top: 9px;
     }
 
 
