@@ -1278,6 +1278,9 @@ footer{
     .modal-img{
         margin: auto;
         max-width: 85px;
+        padding-bottom: 20px;
+
+
 
     }
     .modal-bolsa {
