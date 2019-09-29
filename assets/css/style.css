@@ -664,6 +664,7 @@ footer{
 }
 .modal-img-width{
     width: 130px;
+    display: flex;
 }
 .modal-title-result{
     font-size: 14px;
