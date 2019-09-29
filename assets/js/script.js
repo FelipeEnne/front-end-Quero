@@ -239,12 +239,12 @@ function addLogo(id,index){
 	let img = document.createElement("img");
 	img.setAttribute("class","modal-img");
 	let nameUniversity = myObj[index]["university"]["name"];
-
+	/*
 	if(myObj[index]["university"]["name"] == "Anhembi Morumbi" ||
 	 myObj[index]["university"]["name"] == "UNICSUL" ||
 	 myObj[index]["university"]["name"] == "UNIP" ){
 		img.setAttribute("style","margin-top: 10px;");
-	}
+	}*/
 
 	img.setAttribute("src",myObj[index]["university"]["logo_url"]);
 
