@@ -22,6 +22,8 @@ header .header-layout{
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.09);  
 }
 
+
+
 .container{
 	display: flex;
 	max-width: 1040px;
@@ -49,15 +51,12 @@ header .header-layout{
 .header-column{
 	display: flex;
 }
-
 .header-division{
 	align-self: stretch;
 	border: 1px solid #ebebeb;
 	margin: 13px 8px;
     margin-right: 10px;
 }
-
-
 .header-contact a{
 	text-decoration: none;
 }
@@ -76,7 +75,6 @@ header .header-layout{
 .header-contact .header-text{
 	margin-top: 16px;
 }
-
 .header-logo-img {
     width: 110px;
     align-items: center;
@@ -84,7 +82,6 @@ header .header-layout{
 }
 .header-info-person{
 	margin-left: 230px;
-
 }
 .header-info-person a{
 	text-decoration: none;
@@ -97,6 +94,8 @@ header .header-layout{
     height: 22px;
     margin-top: -20px;
 }
+
+
 
 
 nav{
@@ -197,7 +196,6 @@ nav{
     font-size: 15px;
     margin-bottom: 35px;
 }
-
 
 
 
@@ -369,6 +367,7 @@ footer{
 
 
 
+
 #overlayall {
     position: absolute;
     display: none;
@@ -381,8 +380,6 @@ footer{
     background-color: rgba(31, 45, 48, 0.88);
     z-index: 10;
 }
-
-
 #overlay {
     position: absolute; 
     display: none; 
@@ -545,14 +542,9 @@ footer{
 }
 
 
-
-
 .checkbox-first{
     margin-right: 20px;
 }
-
-
-
 .modal-input2-fist{
     margin-right: 103px;
 }
@@ -603,7 +595,6 @@ footer{
     border-width:2px;
 
 }
-
 
 
 .modal-indice{
@@ -737,7 +728,6 @@ footer{
     height: 40px;
     width: 150px;
 }
-
 
 
 
@@ -954,7 +944,6 @@ footer{
     width: 410px;
     justify-content: space-between;
 }
-
 .modal-title-result-div {
     width: 220px;
 }
@@ -1025,6 +1014,8 @@ footer{
     }
 
 
+
+
     .min-nav-menu{
         display: none;
     }
@@ -1039,6 +1030,8 @@ footer{
     }
 
 
+
+
     .menu {
         width: 94%;
     }
@@ -1049,6 +1042,9 @@ footer{
         margin-right: 5px;
         margin-bottom: 35px;
     }
+
+
+
 
     .active-semestres-first .semestres-decoration {
         padding: 0px;
@@ -1089,6 +1085,8 @@ footer{
     }
 
 
+
+
     .add-bolsa {
         height: 166px;
         margin: auto;
@@ -1110,6 +1108,8 @@ footer{
     .menu-flex {
         display: block;
     }
+
+
 
 
     .first-footer-mobile{
@@ -1150,6 +1150,7 @@ footer{
 
 
 
+
     .first-footer{
         display: none;
     }
@@ -1165,7 +1166,6 @@ footer{
         height: 65px;
         padding-top: 10px;
     }
-
     .footer-title-chat{
         color: white;
         font-weight: bold;
@@ -1183,7 +1183,6 @@ footer{
     .icon-info2{
         width: 28px;
     }
-
     footer{
         height: 200px;
         margin-top: 100px;
@@ -1195,37 +1194,30 @@ footer{
     #overlay{
         height: 2095px;
     }
-
-
     .modal-overlay{
         left: 0;
         margin-top: 32px;
     }
-
     .modal-content {
         position: absolute;
         width: 425px;
         height: 760px;
         background-color: #ffffff;
     }
-
     .modal-overlay .overlay-icon {
         margin-left: 386px
     }
-
     .modal-title {
         margin-top: 19px;
         font-size: 20px;
         font-weight: bold;
         margin-left: 60px;
     }
-    
     .modal-text {
         margin-top: 0px;
         font-size: 14px;
         margin-left: 60px;
     }
-
     .modal-input1{
         display: block;
         margin-top: 25px;
@@ -1265,6 +1257,7 @@ footer{
     }
 
 
+
     .modal-content {
         position: absolute;
         width: 425px;
@@ -1279,9 +1272,6 @@ footer{
         margin: auto;
         max-width: 85px;
         padding-bottom: 20px;
-
-
-
     }
     .modal-bolsa {
         margin-left: 19px;

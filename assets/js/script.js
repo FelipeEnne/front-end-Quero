@@ -1,13 +1,13 @@
-//overlay
+///***********On and Off overlay**********///
 function onOverlay() {
   document.getElementById("overlay").style.display = "block";
 }
-
 function offOverlay() {
   document.getElementById("overlay").style.display = "none";
 }
 
 
+///***********Request API and On Load **********///
 var myObj;
 
 var requestURL = 'https://testapi.io/api/redealumni/scholarships';
@@ -22,66 +22,16 @@ request.send();
 
 request.onload = function() {
   myObj  = request.response;
-  selectCity();
-  selectCourse();
+  addOptionCity();
+  addOptionCourses();
   filterAll();
 
   resultsOverlay();
 
-
   mobileOnload();
-  
-
-
 }
 
-function mobileOnload(){
-  var windowWidth = window.innerWidth;
-  
-  var screenWidth = screen.width;
-  //console.log(screenWidth);
-
-  if(screenWidth<=425){
-  document.getElementById("myRange");
-  let widthChatWidth = screenWidth/3-2;
-  let widthChat = widthChatWidth + "px";
-  //console.log(tamanho);
-
-  var footerChatMobile = document.getElementsByClassName("footer-chat-mobile");
-  footerChatMobile[0].style.width = widthChat;
-  footerChatMobile[1].style.width = widthChat;
-  footerChatMobile[2].style.width = widthChat;
-
-
-  let widthOverlayiconWidth = screenWidth-35;
-  let widthOverlay = widthOverlayiconWidth + "px";
-  var overlayIcon = document.getElementsByClassName("overlay-icon");
-  overlayIcon[0].setAttribute("style", "margin-left: "+widthOverlay);
-
-  var overlayContent = document.getElementsByClassName("modal-content");
-  overlayContent[0].setAttribute("style", "width: "+ screenWidth+"px");
-
-  let ModalResultado = screenWidth - 180;
-  var overlayModalResultado = document.getElementsByClassName("modal-resultado");
-  overlayModalResultado[0].setAttribute("style","margin-right: "+ ModalResultado+"px");
-
-  let hrModal = screenWidth - 35;
-  var overlayhrModal = document.getElementsByClassName("hr-modal-first");
-  overlayhrModal[0].setAttribute("style","width: "+ hrModal+"px");
-
-
-  var overlayhrModal = document.getElementsByClassName("hr-modal");
-  overlayhrModal[0].setAttribute("style","width: "+ hrModal+"px");
-  overlayhrModal[1].setAttribute("style","width: "+ hrModal+"px");
-  overlayhrModal[2].setAttribute("style","width: "+ hrModal+"px");
-  overlayhrModal[3].setAttribute("style","width: "+ hrModal+"px");
-  overlayhrModal[4].setAttribute("style","width: "+ hrModal+"px");
-}
-};
-
-
-
-//overlay primeiro select
+//overlay first select
 var allCitys = ["São José dos Campos"];
 function pushCitys(){
 
@@ -91,8 +41,7 @@ function pushCitys(){
 		}
 	}
 }
-function selectCity() {
-
+function addOptionCity() {
 	pushCitys();
 	for(let i = 1; i < allCitys.length; i++){
 		let option = document.createElement('option');
@@ -100,10 +49,8 @@ function selectCity() {
 		option.value = allCitys[i];
 		document.getElementById("select-city").appendChild(option);
 	}
-	//console.log("teste")
 }
-
-//overlay segundo select
+//overlay second select
 var allCourses = [];
 function pushCourses(){
  
@@ -113,7 +60,7 @@ function pushCourses(){
 		}
 	}
 }
-function selectCourse() {
+function addOptionCourses() {
 
 	pushCourses();
 	for(let i = 1; i < allCourses.length; i++){
@@ -125,9 +72,7 @@ function selectCourse() {
 	//console.log(allCourses)
 }
 
-
-
-//ranger
+//overlay ranger
 var slider = document.getElementById("myRange");
 var output = document.getElementById("price");
 function formatNumber(num) {
@@ -138,8 +83,6 @@ output.innerHTML = formatNumber(slider.value);
 slider.oninput = function() {
 	output.innerHTML = formatNumber(this.value);
 }
-
-
 
 //filters
 function sortUniversityName(myObj){
@@ -186,15 +129,75 @@ function filterAll(){
   	filterPricefirst();
 }
 
+//load mobile
+var windowWidth = window.innerWidth;
+var screenWidth = screen.width;
+function mobileOnload(){
+
+  if(screenWidth<=425){
+	  mobileWidthChat();
+	  mobileOverlay();
+	  mobilModal();
+	}
+};
+function mobileWidthChat(){
+	document.getElementById("myRange");
+	let widthChatWidth = screenWidth/3-2;
+	let widthChat = widthChatWidth + "px";
+
+	let footerChatMobile = document.getElementsByClassName("footer-chat-mobile");
+	footerChatMobile[0].style.width = widthChat;
+	footerChatMobile[1].style.width = widthChat;
+	footerChatMobile[2].style.width = widthChat;
+}
+function mobileOverlay(){
+	let widthOverlayiconWidth = screenWidth-35;
+  	let widthOverlay = widthOverlayiconWidth + "px";
+  	let overlayIcon = document.getElementsByClassName("overlay-icon");
+  	overlayIcon[0].setAttribute("style", "margin-left: "+widthOverlay);
+
+  	let overlayContent = document.getElementsByClassName("modal-content");
+  	overlayContent[0].setAttribute("style", "width: "+ screenWidth+"px");
+}
+function mobilModal(){
+	let ModalResultado = screenWidth - 180;
+  	let overlayModalResultado = document.getElementsByClassName("modal-resultado");
+	overlayModalResultado[0].setAttribute("style","margin-right: "+ ModalResultado+"px");
+
+  	let hrModal = screenWidth - 35;
+  	let overlayhrModalfirst = document.getElementsByClassName("hr-modal-first");
+  	overlayhrModalfirst[0].setAttribute("style","width: "+ hrModal+"px");
 
 
+  	let overlayhrModal = document.getElementsByClassName("hr-modal");
+  	overlayhrModal[0].setAttribute("style","width: "+ hrModal+"px");
+  	overlayhrModal[1].setAttribute("style","width: "+ hrModal+"px");
+  	overlayhrModal[2].setAttribute("style","width: "+ hrModal+"px");
+  	overlayhrModal[3].setAttribute("style","width: "+ hrModal+"px");
+  	overlayhrModal[4].setAttribute("style","width: "+ hrModal+"px");
+}
 
-//results
+
+///***********Show Results of filter in overlay**********///
 var resultsIndex = [];
-function  getIndexAfterFilter(){
+function filterResults(){
 
+	resultsIndex = [];
+	checkboxSelect = [0,0,0,0,0];
+	filterAll();
+	getIndexAfterFilter();
+
+	removeChildModal();
 	
-	for(let i = 1; i < myObj.length; i++){
+	showResultModal();
+
+	enableSubmit();
+	addcheckboxSelect();
+}
+
+
+function  getIndexAfterFilter(){
+	for(let i = 0; i < myObj.length; i++){
 		if(myObj[i]["campus"]["city"] == citySelect && 
 			(myObj[i]["course"]["name"] == courseSelect || courseSelect== "") &&
 			(myObj[i]["price_with_discount"] <= precoSelect)){
@@ -208,214 +211,8 @@ function  getIndexAfterFilter(){
 			
 		}
 	}
-}
-function addCheckbox(id,idinput){
-	let div = document.createElement("div");
-	div.classList.add("modal-reults-margin");
-
-	let label = document.createElement("label");
-	label.classList.add("container-checkbox");
-	label.classList.add("modal-reults-margin");
-	
-
-	let input = document.createElement("input");
-	input.setAttribute("type", "checkbox");
-
-	let span = document.createElement("span");
-	span.classList.add("checkmark-checkbox");
-	span.setAttribute("id", idinput);
-
-	label.appendChild(input);
-	label.appendChild(span);
-	div.appendChild(label);
-
-	let element = document.getElementById(id);
-	element.appendChild(div);
-}
-function addLogo(id,index){
-	let div = document.createElement("div");
-	div.setAttribute("class","modal-img-width");
-
-	let img = document.createElement("img");
-	img.setAttribute("class","modal-img");
-	let nameUniversity = myObj[index]["university"]["name"];
-	/*
-	if(myObj[index]["university"]["name"] == "Anhembi Morumbi" ||
-	 myObj[index]["university"]["name"] == "UNICSUL" ||
-	 myObj[index]["university"]["name"] == "UNIP" ){
-		img.setAttribute("style","margin-top: 10px;");
-	}*/
-
-	img.setAttribute("src",myObj[index]["university"]["logo_url"]);
-
-
-	div.appendChild(img);
-
-	let element = document.getElementById(id);
-	element.appendChild(div);
-}
-/*
-function addText(id,index){
-	let div1 = document.createElement("div");
-
-	let div2 = document.createElement("div");
-	div2.setAttribute("class","modal-title-result");
-	div2.innerHTML = myObj[index]["course"]["name"];
-	
-	
-	div1.appendChild(div2);
-
-
-	let div3 = document.createElement("div");
-	div3.setAttribute("class","modal-text-result");
-	div3.innerHTML = myObj[index]["course"]["level"];
-
-	div1.appendChild(div3);
-	
-	let element = document.getElementById(id);
-	element.appendChild(div1);
-}
-function addTextBolsa(id,index){
-
-	let div1 = document.createElement("div");
-	div1.setAttribute("class","modal-bolsa");
-	
-	
-	let div2 = document.createElement("div");
-	div2.setAttribute("class","modal-text-bolsa");
-	div2.innerHTML = "Bolsa de ";
-
-	let margin = ((myObj[index]["course"]["name"]).length - 8)*7.5;
-	div2.style.marginLeft = -margin+"px";
-	
-
-	let strong = document.createElement("strong");
-	strong.setAttribute("class","modal-bold-bolsa");
-	strong.innerHTML = myObj[index]["discount_percentage"]+"%";
-
-	div2.appendChild(strong);
-	div1.appendChild(div2);
-
-
-	let div3 = document.createElement("div");
-	div3.style.marginLeft = -margin+"px";
-	let strong1 = document.createElement("strong");
-	strong1.setAttribute("class","modal-bold-bolsa");
-	strong1.innerHTML = "R$ "+Math.round(myObj[index]["price_with_discount"])+"/mês";
-
-	div3.appendChild(strong1);
-	div1.appendChild(div3);
-	
-
-	let element = document.getElementById(id);
-	element.appendChild(div1);
-}
-*/
-function addTextAndBolsa(id,index){
-	let div0 = document.createElement("div");
-	div0.setAttribute("class","modal-title-result-mobile");
-
-	let div1 = document.createElement("div");
-	div1.setAttribute("class","modal-title-result-div");
-
-	let div2 = document.createElement("div");
-	div2.setAttribute("class","modal-title-result");
-	div2.innerHTML = myObj[index]["course"]["name"];
-	
-	
-	div1.appendChild(div2);
-
-
-	let div3 = document.createElement("div");
-	div3.setAttribute("class","modal-text-result");
-	div3.innerHTML = myObj[index]["course"]["level"];
-
-	div1.appendChild(div3);
-
-	let element = document.getElementById(id);
-	div0.appendChild(div1);
-
-
-	div1 = document.createElement("div");
-	div1.setAttribute("class","modal-bolsa");
-	
-	
-	div2 = document.createElement("div");
-	div2.setAttribute("class","modal-text-bolsa");
-	div2.innerHTML = "Bolsa de ";
-
-
-	strong = document.createElement("strong");
-	strong.setAttribute("class","modal-bold-bolsa");
-	strong.innerHTML = Math.round(myObj[index]["discount_percentage"])+"%";
-
-	div2.appendChild(strong);
-	div1.appendChild(div2);
-
-
-	div3 = document.createElement("div");
-	let strong1 = document.createElement("strong");
-	strong1.setAttribute("class","modal-bold-bolsa");
-	strong1.innerHTML = "R$ "+Math.round(myObj[index]["price_with_discount"])+"/mês";
-
-	div3.appendChild(strong1);
-	div1.appendChild(div3);
-	
-
-	div0.appendChild(div1);
-	element.appendChild(div0);
-}
-
-
-var counthrID = 1;
-function addhr(id){
-	let hr = document.createElement("hr");
-	hr.setAttribute("class","hr-modal");
-	hr.setAttribute("id","hrcount"+counthrID);
-	counthrID++;
-
-	let element = document.getElementById(id);
-	element.after(hr);
-}
-
-function addResultModal(id,index,idinput){
-	addCheckbox(id,idinput);
-	addLogo(id,index);
-	//addText(id,index);
-	//addTextBolsa(id,index);
-
-	addTextAndBolsa(id,index);
-	addhr(id);
-}
-
-function showResultModal(){
-	if(resultsIndex[0]){
-		addResultModal("first-result",resultsIndex[0],"checkbox1");
-	}
-	if(resultsIndex[1]){
-		addResultModal("second-result",resultsIndex[1],"checkbox2");
-	}
-	if(resultsIndex[2]){
-		addResultModal("third-result",resultsIndex[2],"checkbox3");
-	}
-	if(resultsIndex[3]){
-		addResultModal("fourth-result",resultsIndex[3],"checkbox4");
-	}
-	if(resultsIndex[4]){
-		addResultModal("fifth-result",resultsIndex[4],"checkbox5");
-	}	
-}
-
-function resultsOverlay(){
-
-	getIndexAfterFilter();
 	//console.log(resultsIndex);
-	showResultModal();
-
-	addcheckboxSelect();
-	
 }
-
 
 function removeChildModal(){
 
@@ -472,23 +269,144 @@ function removeChildModal(){
   	counthrID = 1;
 }
 
-function filterResults(){
+function showResultModal(){
+	if(resultsIndex[0] || resultsIndex[0] === 0){
+		addResultModal("first-result",resultsIndex[0],"checkbox1");;
+	}
+	if(resultsIndex[1] || resultsIndex[1] === 0){
+		addResultModal("second-result",resultsIndex[1],"checkbox2");
+	}
+	if(resultsIndex[2] || resultsIndex[2] === 0){
+		addResultModal("third-result",resultsIndex[2],"checkbox3");
+	}
+	if(resultsIndex[3] || resultsIndex[3] === 0){
+		addResultModal("fourth-result",resultsIndex[3],"checkbox4");
+	}
+	if(resultsIndex[4] || resultsIndex[4] === 0){
+		addResultModal("fifth-result",resultsIndex[4],"checkbox5");
+	}	
+}
 
-	resultsIndex = [];
-	checkboxSelect = [0,0,0,0,0];
-	filterAll();
+function addCheckbox(id,idinput){
+	let div = document.createElement("div");
+	div.classList.add("modal-reults-margin");
+
+	let label = document.createElement("label");
+	label.classList.add("container-checkbox");
+	label.classList.add("modal-reults-margin");
+	
+
+	let input = document.createElement("input");
+	input.setAttribute("type", "checkbox");
+
+	let span = document.createElement("span");
+	span.classList.add("checkmark-checkbox");
+	span.setAttribute("id", idinput);
+
+	label.appendChild(input);
+	label.appendChild(span);
+	div.appendChild(label);
+
+	let element = document.getElementById(id);
+	element.appendChild(div);
+}
+function addLogo(id,index){
+	let div = document.createElement("div");
+	div.setAttribute("class","modal-img-width");
+
+	let img = document.createElement("img");
+	img.setAttribute("class","modal-img");
+	let nameUniversity = myObj[index]["university"]["name"];
+
+	img.setAttribute("src",myObj[index]["university"]["logo_url"]);
+
+
+	div.appendChild(img);
+
+	let element = document.getElementById(id);
+	element.appendChild(div);
+}
+function addTextAndBolsa(id,index){
+	let div0 = document.createElement("div");
+	div0.setAttribute("class","modal-title-result-mobile");
+
+	let div1 = document.createElement("div");
+	div1.setAttribute("class","modal-title-result-div");
+
+	let div2 = document.createElement("div");
+	div2.setAttribute("class","modal-title-result");
+	div2.innerHTML = myObj[index]["course"]["name"];
+	
+	
+	div1.appendChild(div2);
+
+
+	let div3 = document.createElement("div");
+	div3.setAttribute("class","modal-text-result");
+	div3.innerHTML = myObj[index]["course"]["level"];
+
+	div1.appendChild(div3);
+
+	let element = document.getElementById(id);
+	div0.appendChild(div1);
+
+
+	div1 = document.createElement("div");
+	div1.setAttribute("class","modal-bolsa");
+	
+	
+	div2 = document.createElement("div");
+	div2.setAttribute("class","modal-text-bolsa");
+	div2.innerHTML = "Bolsa de ";
+
+
+	strong = document.createElement("strong");
+	strong.setAttribute("class","modal-bold-bolsa");
+	strong.innerHTML = Math.round(myObj[index]["discount_percentage"])+"%";
+
+	div2.appendChild(strong);
+	div1.appendChild(div2);
+
+
+	div3 = document.createElement("div");
+	let strong1 = document.createElement("strong");
+	strong1.setAttribute("class","modal-bold-bolsa");
+	strong1.innerHTML = "R$ "+Math.round(myObj[index]["price_with_discount"])+"/mês";
+
+	div3.appendChild(strong1);
+	div1.appendChild(div3);
+	
+
+	div0.appendChild(div1);
+	element.appendChild(div0);
+}
+var counthrID = 1;
+function addhr(id){
+	let hr = document.createElement("hr");
+	hr.setAttribute("class","hr-modal");
+	hr.setAttribute("id","hrcount"+counthrID);
+	counthrID++;
+
+	let element = document.getElementById(id);
+	element.after(hr);
+}
+function addResultModal(id,index,idinput){
+	addCheckbox(id,idinput);
+	addLogo(id,index);
+
+	addTextAndBolsa(id,index);
+	addhr(id);
+}
+
+function resultsOverlay(){
 	getIndexAfterFilter();
-
-	removeChildModal();
-	
-	
 	//console.log(resultsIndex);
 	showResultModal();
 
-	enableSubmit();
 	addcheckboxSelect();
-
+	
 }
+
 
 
 
@@ -602,23 +520,23 @@ function checkboxChange5(){
 
 
 function addcheckboxSelect(){
-	if(resultsIndex[0]){
+	if(resultsIndex[0] || resultsIndex[0] === 0){
 		let checkbox1 = document.getElementById("checkbox1");
 		checkbox1.setAttribute("Onclick", "checkboxChange1();");
 	}
-	if(resultsIndex[1]){
+	if(resultsIndex[1] || resultsIndex[1] === 0){
 		let checkbox2 = document.getElementById("checkbox2");
 		checkbox2.setAttribute("Onclick", "checkboxChange2();");
 	}
-	if(resultsIndex[2]){
+	if(resultsIndex[2] || resultsIndex[2] === 0){
 		let checkbox3 = document.getElementById("checkbox3");
 		checkbox3.setAttribute("Onclick", "checkboxChange3();");
 	}
-	if(resultsIndex[3]){
+	if(resultsIndex[3] || resultsIndex[3] === 0){
 		let checkbox4 = document.getElementById("checkbox4");
 		checkbox4.setAttribute("Onclick", "checkboxChange4();");
 	}
-	if(resultsIndex[4]){
+	if(resultsIndex[4] || resultsIndex[4] === 0){
 		let checkbox5 = document.getElementById("checkbox5");
 		checkbox5.setAttribute("Onclick", "checkboxChange5();");
 	}	
@@ -648,10 +566,7 @@ function enableSubmit(){
 	//console.log(resultsIndex);
 }
 
-
-// Show Home
-//var resultsIndex = [];
-//var checkboxSelect = [0,0,0,0,0];
+///***********Show Results of submit on home**********///
 var resultsHome = [];
 
 function getIndexresultsHome(){
@@ -667,20 +582,57 @@ function getIndexresultsHome(){
 	}
 }
 function disablebolsaSubmit(){
-	if(resultsHome[0]){
+	if(resultsHome[0] || resultsHome[0] === 0){
 		let div = document.getElementById("bolsaSubmit-fist");
 		div.setAttribute("style","display: block;");
 	}
 	//console.log(resultsHome);
 	///*
-	if(resultsHome[1]){
+	if(resultsHome[1] || resultsHome[1] === 0){
 		let div = document.getElementById("bolsaSubmit-second");
 		div.setAttribute("style","display: block;");
 	}
-	if(resultsHome[2]){
+	if(resultsHome[2] || resultsHome[2] === 0){
 		let div = document.getElementById("bolsaSubmit-third");
 		div.setAttribute("style","display: block;");
 	}//*/
+}
+
+function addHome(id,index){
+	disablebolsaSubmit();
+	addImageHome(id,index);
+	addUniversityHome(id,index);
+	addCourseHome(id,index);
+	addScoreHome(id,index);
+	addKindHome(id,index);
+	addstartDateHome(id,index);
+
+
+	if(myObj[index]["enabled"] == true){
+		addfullPriceHome(id,index);
+		addDiscountPriceHome(id,index);
+		addSubmitButton(id,index);
+	}
+
+	if(myObj[index]["enabled"] == false){
+		addtextHomeEnabled(id,index);
+		addSubmitButtonEnabled(id,index);
+	}
+}
+
+function addresultsHome(){
+
+	//console.log(resultsHome);
+	resultsHome = [];
+	offOverlay();
+	getIndexresultsHome();
+	
+	removeFromHome();
+	
+	
+	addHomeAll();
+
+	filterResults();
 }
 
 
@@ -918,39 +870,16 @@ function addSubmitButtonEnabled(id,index){
 	idButtonExcluir++;
 }
 
-function addHome(id,index){
-	disablebolsaSubmit();
-	addImageHome(id,index);
-	addUniversityHome(id,index);
-	addCourseHome(id,index);
-	addScoreHome(id,index);
-	addKindHome(id,index);
-	addstartDateHome(id,index);
 
-	//console.log(myObj[index]["enabled"]);
-	if(myObj[index]["enabled"] == true){
-	addfullPriceHome(id,index);
-	addDiscountPriceHome(id,index);
-	addSubmitButton(id,index);
-	}
-
-	if(myObj[index]["enabled"] == false){
-	addtextHomeEnabled(id,index);
-	addSubmitButtonEnabled(id,index);
-	}
-	//console.log(index);
-	//console.log(myObj[index]["enrollment_semester"]);
-	//console.log(myObj[index]["course"]["name"]);
-}
 
 function addHomeAll(){
-	if(resultsHome[0]){
+	if(resultsHome[0] ||  resultsHome[0] === 0){
 	addHome("bolsaSubmit-fist",resultsHome[0]);
 	}
-	if(resultsHome[1]){
+	if(resultsHome[1] ||  resultsHome[1] === 0){
 	addHome("bolsaSubmit-second",resultsHome[1]);
 	}
-	if(resultsHome[2]){
+	if(resultsHome[2] ||  resultsHome[2] === 0){
 	addHome("bolsaSubmit-third",resultsHome[2]);
 	}
 	
@@ -1003,26 +932,10 @@ function removeFromHomeButton3(){
 		div.setAttribute("style","display: none;");
 }
 
-function addresultsHome(){
-
-	//console.log(resultsHome);
-	resultsHome = [];
-	offOverlay();
-	getIndexresultsHome();
-	
-	removeFromHome();
-	
-	
-	addHomeAll();
-
-	filterResults();
-	
-	//console.log(resultsHome);
-}
 
 
 
-
+///***********Filter semester **********///
 function filterSemesterall(){
 	let semestresAll = document.getElementById("semestresAll");
 	let semestres1 = document.getElementById("semestres1");
