@@ -953,9 +953,7 @@ footer{
     width: 410px;
     justify-content: space-between;
 }
-.modal-title-result-mobile{
-    display: flex;
-}
+
 .modal-title-result-div {
     width: 220px;
 }
