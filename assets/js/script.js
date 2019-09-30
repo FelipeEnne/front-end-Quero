@@ -414,16 +414,27 @@ function resultsOverlay(){
 var checkboxSelect = [0,0,0,0,0];
 var reducer = (accumulator, currentValue) => accumulator + currentValue;
 function removeDisable(){
-	let checkbox1 = document.getElementById("checkbox1");
-	checkbox1.parentNode.childNodes[0].removeAttribute("disabled");
+	
+	if (document.getElementById("checkbox1")) {
+		let checkbox1 = document.getElementById("checkbox1");
+		checkbox1.parentNode.childNodes[0].removeAttribute("disabled");
+	}
+	if (document.getElementById("checkbox2")) {
 	let checkbox2 = document.getElementById("checkbox2");
 	checkbox2.parentNode.childNodes[0].removeAttribute("disabled");
+	}
+	if (document.getElementById("checkbox3")) {
 	let checkbox3 = document.getElementById("checkbox3");
 	checkbox3.parentNode.childNodes[0].removeAttribute("disabled");
+	}
+	if (document.getElementById("checkbox4")) {
 	let checkbox4 = document.getElementById("checkbox4");
 	checkbox4.parentNode.childNodes[0].removeAttribute("disabled");
+	}
+	if (document.getElementById("checkbox5")) {
 	let checkbox5 = document.getElementById("checkbox5");
 	checkbox5.parentNode.childNodes[0].removeAttribute("disabled");
+	}
 }
 function checkboxChange1(){
 
