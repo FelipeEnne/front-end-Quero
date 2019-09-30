@@ -3,7 +3,11 @@
 ### Instruções
 
 #### Para executar o projeto é necessário abrir o arquivo index.html por um navegador dentro da pasta QueroFrontEnd.
+<<<<<<< HEAD
 ### Para acessar o site otimizado pelo gulp entre na pasta site site-otimizado\public e abra arquivo index.html por um navegador.
+=======
+## Para acessar o site otimizado pelo gulp entre na pasta site site-otimizado\public e abra arquivo index.html por um navegador.
+>>>>>>> b35296525d30e84849c1fc16af0943749080798c
 
 Obs:
 * Sempre quando mudar o tamanho da página é necessário a atualização da mesma.
