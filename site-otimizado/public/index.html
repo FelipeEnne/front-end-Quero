@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Teste de Front End da Quero Educação</title>
+	<meta charset="utf-8">
+	<meta id="viewport" name="viewport" content="width=device-width, user-scalable=no">
+	<link type="text/css" href="assets/css/style.min.css" rel="stylesheet"/>
+	
+
+</head>
+<body>
+<div></div>
+	<div id="overlay">
+		<div class="modal-overlay">
+			<img Onclick="offOverlay()" class="overlay-icon" src="assets/img/exit.png" alt="exit" title="exit">
+			<div class="modal-content">
+				<div class="modal-menu">
+
+
+				<div>
+					<div class="modal-title text-color-default">Adicionar bolsa</div>
+					<div class="modal-text text-color-default">Filtre e adicione as bolsas de seu enteresse.</div>
+				</div>
+
+
+				<div class="modal-input1">
+					<div>
+					<div class="modal-text-input text-color-default">SELECIONE SUA CIDADE</div>
+					<select Onchange="filterResults()" id="select-city" class="modal-input-first modal-cidade">
+						<option value="São José dos Campos">São José dos Campos</option>
+					</select>
+					</div>
+
+					<div>
+					<div class="modal-text-input text-color-default">SELECIONE O CURSO DE SUA PREFERÊNCIA</div>
+					<select Onchange="filterResults()" id="select-course" class="modal-input-last modal-curso">
+						<option></option>
+					</select>
+					</div>
+				</div>
+
+
+				<div class="modal-input2">
+					<div class="modal-input2-fist">
+					<div class="modal-text-input text-color-default">COMO VOCÊ QUER ESTUDAR?
+					</div>
+					<div class="modal-input-cheackbox">
+					<label class="container-checkbox checkbox-first">Presencial
+					  <input  Onchange="filterResults()" Onclick="changePresencial()" id="presencial" type="checkbox" checked="checked" >
+					  <span  class="checkmark-checkbox"></span>
+					</label>
+
+					<label class="container-checkbox">A distância
+					  <input Onclick="changeaDistacia()" Onchange="filterResults()" id="adistancia" type="checkbox" checked="checked">
+					  <span  class="checkmark-checkbox"></span>
+					</label>
+					</div>
+					</div>
+
+					<div>
+					<div class="modal-text-input text-color-default">ATÉ QUANTO PODE PAGAR?</div>
+					<div class="slidecontainer">
+					<p class="range-output">R$<span id="price"></span></p>
+					  <input Onchange="filterResults()"type="range" min="0" max="10000" value="10000" class="slider" id="myRange">
+					</div>
+					</div>
+				</div>
+
+
+				<div class="modal-indice">
+					<div class="modal-resultado">Resultado:</div>
+					<div class="modal-ordenar">Ordenar por 
+						<div class="modal-ordenar-modo">Nome da Faculdade<a href="#"><img id="modal-icon" src="assets/img/arrow.png" alt="arrow" title="arrow"></a></div>
+					</div>
+				</div>
+
+
+
+				<hr class="hr-modal-first"/>
+
+
+				<div class="modal-results" id="first-result"></div>
+				<div class="modal-results" id="second-result"></div>
+				<div class="modal-results" id="third-result"></div>
+				<div class="modal-results" id="fourth-result"></div>
+				<div class="modal-results" id="fifth-result"></div>
+				
+
+				<div>
+					<input Onclick="addresultsHome()" class="modal-submit" id="adicionarBolsa" type="submit" value="Adicionar bolsa(s)" disabled>
+				</div>
+
+
+				</div>
+				<div>
+					<button Onclick="offOverlay();" class="modal-cancelar">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	<!--- div overlay -->
+	</div>
+
+	<header class="header-layout">
+		<div class="container">
+
+			<div class="header-info">
+				<a href="#" >
+					<img class="header-icon" src="assets/img/info.png" alt="exclamation" title="exclamation">  
+				</a>
+				<a href="#" >
+				<div class="header-text">Como funciona</div>
+				</a>
+			</div>
+
+			
+			<hr class="header-division">
+
+			<div class="header-contact">
+				<a href="#" >
+					<img class="header-icon" src="assets/img/whats.png" alt="whats" title="whats">  
+				</a>
+				<a href="#">
+				<div class="header-text">0800 123 2222</div>
+				<div class="header-text-smaller">Envie mensagem ou ligue</div>
+				</a>
+			</div>
+
+			<div class="header-logo">
+				<a href="#" >
+					<img class="header-logo-img" src="assets/img/logo-querobolsa.svg" alt="Logo Quero Bolsa" title="Quero Bolsa">  
+				</a>
+			</div>
+
+
+			<div class="header-info-person">
+				<a href="#" >
+				<div class="header-text">Nome Sobrenome</div>
+				</a>
+				<a href="#" >
+					<img class="header-icon" src="assets/img/pessoa.png" alt="person" title="person">  
+				</a>
+			</div>
+
+
+			
+		</div>
+	</header>
+
+	<header class="header-layout-mobile">
+		
+
+			<div class="header-info-mobile">
+				<div>
+				<a href="#" >
+					<img class="header-icon-mobile" src="assets/img/info.png" alt="exclamation" title="exclamation">  
+				</a>
+				</div>
+				<div>
+				<a href="#" class="header-text">Ajuda</a>
+				</div>
+			</div>
+
+			<hr class="header-division">
+
+			<div class="header-logo-mobile">
+					<img class="header-logo-img" src="assets/img/logo-querobolsa.svg" alt="Logo Quero Bolsa" title="Quero Bolsa">  
+			</div>
+
+			<hr class="header-division">
+
+			<div class="header-info-mobile">
+				<div>
+				<a href="#" >
+					<img class="header-icon-mobile" src="assets/img/pessoa.png" alt="person" title="person">  
+				</a>
+				</div>
+				<div>
+				<a href="#" class="header-text">Conta</a>
+				</div>
+			</div>
+	</header>
+
+	<nav class="nav-menu">
+		<div class="menu-bigwidth">
+			<ul>
+				<li class="menu-text-conta bold">
+					<a href="#" class="menu-decoration">Minha conta</a>
+				</li>
+				<li class="menu-text bold" >
+					<a href="#" class="menu-decoration">Pré-matrículas</a>
+				</li>
+				<li class="active menu-text bold">
+					<a href="#" class="menu-decoration">Bolsas Favoritas</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<nav class="nav-menu-mobile">
+
+		<div class="nav-menu-mobile-half1">
+			<a href="#" class="menu-text-conta bold menu-decoration">Minha conta</a>
+		</div>
+
+		<div class="nav-menu-mobile-half2">
+			<a href="#" class="menu-text-conta bold menu-decoration">Menu</a>
+			<a href="#" >
+				<img class="nav-icon-mobile-arrow" src="assets/img/arrowmobile.png" alt="arrow-mobile" title="arrow-mobile">  
+			</a>
+		</div>
+	</nav>
+
+
+	<nav class="min-nav-menu">
+		<div class="menu">
+			<ul>
+				<li class="min-menu-text"><a href="#" class="min-menu-decoration">Home</a></li>
+				<li class="min-menu-li">/</li>
+				<li class="min-menu-text" ><a href="#" class="min-menu-decoration">Minha conta</a></li>
+				<li class="min-menu-li">/</li>
+				<li class="min-active min-menu-text"><a href="#" class="min-menu-decoration">Bolsas Favoritas</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<nav class="min-nav-menu-mobile">
+		<img class="nav-icon-mobile-arrow2" src="assets/img/arrowsetmobile2.png" alt="arrow-mobile2" title="arrow-mobile2">
+		<a href="#" class="min-menu-decoration min-menu-text">Minha conta</a>
+	</nav>
+
+
+	<main>
+		<section class="menu">
+			<div class="text-big">Bolsas favoritas</div>
+			<div class="text-small">Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis.
+			</div>
+		</section>
+
+		<nav>
+		<div class="menu">
+		<div class="float-right">
+			<ul>
+				<li id="semestresAll" class="semestres-text active-semestres-first" Onclick="filterSemesterall();"><a href="#" class="semestres-decoration">Todos os semestres</a></li>
+				<li id="semestres1" class="semestres-text semestres-middle" Onclick="filterSemester1();"><a href="#" class="semestres-decoration">2º semestre de 2019</a></li>
+				<li id="semestres2" class="semestres-text semestres-last" Onclick="filterSemester2();"><a href="#" class="semestres-decoration">1º semestre de 2020</a></li>
+			</ul>
+		</div>
+		</div>
+		</nav>
+
+
+		<section>
+			<div class="menu">
+			<div class="menu-flex">
+			<div class="add-bolsa">
+				<div class="plus-img">
+					<a Onclick="onOverlay()">
+					<img class="plus-icon" src="assets/img/plus.png" alt="plus" title="plus">
+					</a>
+				</div>
+
+				<div class="plus-title">Adicionar bolsa</div>
+				<div class="plus-text">Clique para adicionar bolsas de<br> cursos do seu interesse</div>
+			</div>
+
+			<div id="bolsaSubmit-fist" class="add-bolsa-submit" style="display: none;">
+				
+			</div>
+
+
+			<div id="bolsaSubmit-second" class="add-bolsa-submit" 
+			style="display: none;" >
+
+
+			</div>
+
+			<div id="bolsaSubmit-third" class="add-bolsa-submit" 
+			style="display: none;">
+				
+			</div>
+
+
+
+
+
+
+
+			</div>
+		</section>
+	</main>
+
+
+	<footer>
+		<div class="first-footer">
+		<div class="menu menu-footer">
+			<div class="item-footer">
+				<div class="footer-item-flex">
+					<img class="footer-icon icon-whats2" src="assets/img/whats2.png" alt="whats2" title="whats2">
+				</div>
+				<div class="footer-title-text">
+				<div class="footer-title">0800 123 2222</div>
+				<div class="footer-text">Seg - Sex 8h-22h</div>
+				</div>
+			</div>
+			<div class="item-footer">
+				<div class="footer-item-flex">
+					<img class="footer-icon icon-chat" src="assets/img/chat.png" alt="chat" title="chat">
+				</div>
+				<div class="footer-title-text">
+				<div class="footer-title">Chat ao vivo</div>
+				<div class="footer-text">Seg - Sex 8h-22h</div>
+				</div>
+			</div>
+			<div class="item-footer">
+				<div class="footer-item-flex">
+					<img class="footer-icon icon-email" src="assets/img/email.png" alt="email" title="email">
+				</div>
+				<div class="footer-title-text">
+				<div class="footer-title">Mande um e-mail</div>
+				<div class="footer-text">Respondemos rapidinho</div>
+				</div>
+			</div>
+			<div class="item-footer-last">
+				<div class="footer-item-flex">
+					<img class="footer-icon icon-info2" src="assets/img/info2.png" alt="info2" title="info2">
+				</div>
+				<div class="footer-title-text">
+				<div class="footer-title">Central de ajuda</div>
+				<div class="footer-text">Encontre todas as respostas</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="first-footer-mobile">
+
+			<div class="footer-mobile-Whats">
+				<div class="footer-mobile-flexWhats">
+
+				<div class="footer-title-text">
+					<div class="footer-item-flex">
+						<img class="icon-whats2" src="assets/img/whats2.png" alt="whats2" title="whats2">
+					
+					<div>
+					<div class="footer-title">0800 123 2222</div>
+					<div class="footer-text">Segunda a sexta de 8h às 22h</div>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+
+			<div class="footer-mobile-flex">
+			
+
+			<div>
+					<div>
+					<div class="footer-chat-mobile">	
+					<img class="footer-icon icon-chat" src="assets/img/chat.png" alt="chat" title="chat">
+					
+					<div class="footer-title-chat">Chat</div>
+					
+					</div>
+					</div>
+			</div>
+
+			<div>
+					<div>
+					<div class="footer-chat-mobile">	
+					<img class="footer-icon icon-email" src="assets/img/email.png" alt="email" title="email">
+					
+					<div class="footer-title-chat">E-mail</div>
+					
+					</div>
+					</div>
+			</div>
+
+			<div>
+					<div>
+					<div class="footer-chat-mobile">	
+					<img class="footer-icon icon-info2" src="assets/img/info2.png" alt="info2" title="info2">
+					
+					<div class="footer-title-chat">Ajuda</div>
+					
+					</div>
+					</div>
+			</div>
+
+
+			</div>
+		</div>
+		
+
+
+		<div class="last-footer">
+		<div class="menu">
+			<div>
+				Feito com 
+				<img class="icon-heart" src="assets/img/heart.png" alt="heart" title="heart">
+				pela Quero Educação
+			</div>
+			
+		</div>
+		</div>
+	</footer>
+
+	
+	<script type="text/javascript"  src="assets/js/script.min.js"></script>
+
+</body>
+</html>
