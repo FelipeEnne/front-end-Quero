@@ -4,21 +4,21 @@
   "description": "Projeto site otimizado",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "FelipeEnne",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "gulp": "^4.0.2",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-cssimport": "^7.0.0",
-    "gulp-image": "^5.1.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uglifycss": "^1.1.0",
-    "node-sass": "^4.12.0"
+    "sass": "^1.86.0"
   }
 }

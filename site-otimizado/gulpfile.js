@@ -2,10 +2,9 @@ const {src, dest, parallel} = require('gulp');
 const rename = require('gulp-rename');
 const minifyJS = require('gulp-uglify');
 const minifyCSS = require('gulp-uglifycss');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const babel = require('gulp-babel');
 const cssimport = require('gulp-cssimport');
-const image = require('gulp-image');
 
 function html() {
 	return src('src/templates/*.html')
@@ -26,23 +25,16 @@ function javascript() {
 function css() {
 	return src('src/css/*.css')
 		.pipe(cssimport())
-		.pipe(sass())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(minifyCSS())
 		.pipe(rename({extname:'.min.css'}))
 		.pipe(dest('public/assets/css/'));
 }
+
 function img() {
-	return src('src/img/*.png')
-		.pipe(image())
-		.pipe(rename({extname:'.png'}))
-		.pipe(dest('public/assets/img/'));
-}
-function img2() {
-	return src('src/img/*.svg')
-		.pipe(image())
-		.pipe(rename({extname:'.svg'}))
+	return src('src/img/*.{png,svg}')
 		.pipe(dest('public/assets/img/'));
 }
 
 
-exports.default = parallel(html, javascript, css, img, img2);
+exports.default = parallel(html, javascript, css, img);
